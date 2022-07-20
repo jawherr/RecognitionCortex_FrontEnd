@@ -1,0 +1,47 @@
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    height: 100%;
+    margin: 50px;
+    border-radius: 20px;
+  }
+  .login {
+    width: 100%;
+    padding: 15px;
+    margin: auto;
+    border: none !important;
+    max-width: 600px;
+    text-align: center;
+  }
+  .btn-primary{
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+    background-color: #f4c570;
+    color: #606766;
+    border-radius: 15px;
+    font-family: bold;
+    font-weight: bold;
+    border: none !important;
+    max-width: 400px;
+    text-align: center;
+  }
+  .ancho {
+    width: 80%;
+  }
+  h4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    height: 100%;
+  }
+  .fw-normal{
+    font-family: bold;
+  }
+  mat-icon {
+    margin-right: 0px !important;
+    vertical-align: middle;
+  }

@@ -1,0 +1,55 @@
+<div class="mat-elevation-z8">
+    <h2><a routerLink="/publication/detail" *ngIf="userPermission">Ajouter une publication</a></h2>
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+    </mat-form-field>
+    <mat-table [dataSource]="dataSource" matSort class="demo-table">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+        <mat-cell *matCellDef="let publication of publications"> {{publication.id}} </mat-cell>
+      </ng-container>
+  
+      <!-- Description Column -->
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>
+        <mat-cell *matCellDef="let publication of publications"> {{publication.description}} </mat-cell>
+      </ng-container>
+  
+  
+      <!-- Nb_like Column -->
+      <ng-container matColumnDef="nb_like">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nb Like </mat-header-cell>
+        <mat-cell *matCellDef="let publication of publications"> {{publication.nb_like}} </mat-cell>
+      </ng-container>
+  
+      <!-- Utilisateur Column -->
+      <ng-container matColumnDef="utilisateur">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Utilisateur </mat-header-cell>
+        <mat-cell *matCellDef="let publication of publications"> {{publication.utilisateur?.username}} </mat-cell>
+      </ng-container>
+  
+      <!-- Update Column -->
+      <ng-container matColumnDef="update" >
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let publication of fpublications">
+          <a routerLink="/publication/detail/{{publication.id}}" *ngIf="userPermission" class="btn btn-primary">update</a>
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Delete Column -->
+      <ng-container matColumnDef="delete" >
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let publication of publications">
+          <button type="button" class="btn btn-danger" *ngIf="userPermission" (click)="deletePublication(publication.id!)">delete</button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row (click)="logData(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  
+  <app-commentaire></app-commentaire>
+  

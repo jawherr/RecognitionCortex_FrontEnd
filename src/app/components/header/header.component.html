@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="isLoggedIn">
+    <img [src]="logo" alt="" width="3%" height="3%">
+    <a href="/login" class="navbar-brand">Recognition<br>Cortex</a>
+    <!--<ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="#"><i class="fa fa-list"></i>Dashboard</a>
+      </li>
+    </ul>-->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" *ngIf="adminPermission">
+        <a href="/utilisateurs" class="nav-link" routerLink="utilisateurs">
+          <i class="fa fa-search"></i>
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="adminPermission">
+        <a href="/utilisateurs" class="nav-link" routerLink="utilisateurs">
+        <img [src]="coin" alt="" width="33%" height="25%">230
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="adminPermission">
+        <a href="/utilisateurs" class="nav-link" routerLink="utilisateurs">
+        <img [src]="gift" alt="" width="43%" height="35%">2
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="adminPermission">
+        <a href="/utilisateurs" class="nav-link" routerLink="utilisateurs">
+          <i class="fa fa-bell"></i>
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="adminPermission">
+        <a href="/utilisateurs" class="nav-link" routerLink="utilisateurs">
+          <i class="fa fa-user-circle"></i>
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="adminPermission">
+        <a href="/utilisateurs" class="nav-link" routerLink="utilisateurs">
+          <i class="fa fa-ellipsis-v"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{ utilisateur.login }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+</nav>
+<div class="wrapper" *ngIf="isLoggedIn">
+  <div class="sidebar">
+      <ul>
+          <li><a href="/dashboard" routerLink="dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+          <li><a href="/publication" routerLink="publication"><i class="fa fa-leanpub"></i>Publication</a></li>
+          <li><a href="/profil" routerLink="profil"><i class="fa fa-user"></i>Profil</a></li>
+          <li><a href="/badges" routerLink="badges"><i class="fa fa-trophy"></i>Badges</a></li>
+          <li><a href="/equipe" routerLink="equipe"><i class="fa fa-users"></i>Equipe</a></li>
+          <li><a href="/classement" routerLink="classement"><i class="fa fa-th-list"></i>Classement</a></li>
+          <li><a href="/recompense" routerLink="recompense"><i class="fa fa-shopping-basket"></i>Récomponses</a></li>
+          <li><a href="/messagerie" routerLink="messagerie"><i class="fa fa-comment"></i>Messagerie</a></li>
+          <li><a href="/todolist" routerLink="todolist"><i class="fa fa-tasks"></i>To Do List</a></li>
+          <li><a href="/parametres" routerLink="parametres"><i class="fa fa-cog"></i>Paramétres</a></li>
+      </ul>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.mat-elevation-z8 {
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+  }
+  
+  .demo-table {
+    width: 100%;
+    padding: 15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  
+  .mat-column-id {
+    padding-right: 1px;
+    text-align: center;
+  }
+  
+  .mat-column-nom {
+    padding-left: 16px;
+    font-size: 16px;
+  }
+  
+  .mat-column-groupe {
+    padding-left: 16px;
+    font-style: normal;
+  }
+  
+  .mat-column-delete {
+    width: 32px;
+    text-align: center;
+    padding-left: 16px;
+    font-weight: bold;
+  }
+  .mat-column-update {
+    width: 32px;
+    text-align: center;
+    padding-left: 16px;
+    font-weight: bold;
+  }
+  .mat-paginator{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  a:link
+  {
+   text-decoration:none;
+  }
+  

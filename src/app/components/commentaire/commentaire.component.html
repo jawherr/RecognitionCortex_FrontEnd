@@ -1,0 +1,46 @@
+<div class="mat-elevation-z8">
+    <h2><a routerLink="/commentaire/detail" *ngIf="userPermission">Ajouter une commentaire</a></h2>
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+    </mat-form-field>
+    <mat-table [dataSource]="dataSource" matSort class="demo-table">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+        <mat-cell *matCellDef="let commentaire of commentaires"> {{commentaire.id}} </mat-cell>
+      </ng-container>
+  
+      <!-- Libelle Column -->
+      <ng-container matColumnDef="libelle">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Libelle </mat-header-cell>
+        <mat-cell *matCellDef="let commentaire of commentaires"> {{commentaire.libelle}} </mat-cell>
+      </ng-container>
+  
+      <!-- Publication Column -->
+      <ng-container matColumnDef="publication">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Publication </mat-header-cell>
+        <mat-cell *matCellDef="let commentaire of commentaires"> {{commentaire.publication?.description}} </mat-cell>
+      </ng-container>
+  
+      <!-- Update Column -->
+      <ng-container matColumnDef="update" >
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let commentaire of commentaires">
+          <a routerLink="/commentaire/detail/{{commentaire.id}}" *ngIf="userPermission" class="btn btn-primary">update</a>
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Delete Column -->
+      <ng-container matColumnDef="delete" >
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let commentaire of commentaires">
+          <button type="button" class="btn btn-danger" *ngIf="userPermission" (click)="deleteCommentaire(commentaire.id!)">delete</button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row (click)="logData(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  
