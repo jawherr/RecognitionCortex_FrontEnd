@@ -9,6 +9,12 @@
 .wrapper{
   display: flex;
   position: relative;
+  margin-top: 50px;
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .wrapper .sidebar{
@@ -17,6 +23,7 @@
   background: #f1f2f2;
   padding: 10px 0px;
   position: fixed;
+  overflow: auto;
 }
 
 .wrapper .sidebar h2{
@@ -37,10 +44,18 @@
 }    
 
 .wrapper .sidebar ul li a{
+  display: block;
   color: #465765;
   display: block;
-  margin-top: 35px;
+  padding: 16px;
+  margin-top: 5px;
   text-decoration: none;
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
 }
 
 .wrapper .sidebar ul li a .fa{

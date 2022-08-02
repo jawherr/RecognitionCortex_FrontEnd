@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="isLoggedIn">
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top" *ngIf="isLoggedIn">
     <img [src]="logo" alt="" width="3%" height="3%">
     <a href="/login" class="navbar-brand">Recognition<br>Cortex</a>
     <!--<ul class="navbar-nav mr-auto" routerLinkActive="active">
@@ -51,12 +51,12 @@
           <li><a href="/dashboard" routerLink="dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
           <li><a href="/publication" routerLink="publication"><i class="fa fa-leanpub"></i>Publication</a></li>
           <li><a href="/profil" routerLink="profil"><i class="fa fa-user"></i>Profil</a></li>
-          <li><a href="/badges" routerLink="badges"><i class="fa fa-trophy"></i>Badges</a></li>
+          <li><a href="/badge" routerLink="badge"><i class="fa fa-trophy"></i>Badges</a></li>
           <li><a href="/equipe" routerLink="equipe"><i class="fa fa-users"></i>Equipe</a></li>
           <li><a href="/classement" routerLink="classement"><i class="fa fa-th-list"></i>Classement</a></li>
           <li><a href="/recompense" routerLink="recompense"><i class="fa fa-shopping-basket"></i>Récomponses</a></li>
           <li><a href="/messagerie" routerLink="messagerie"><i class="fa fa-comment"></i>Messagerie</a></li>
-          <li><a href="/todolist" routerLink="todolist"><i class="fa fa-tasks"></i>To Do List</a></li>
+          <!--<li><a href="/todolist" routerLink="todolist"><i class="fa fa-tasks"></i>To Do List</a></li>-->
           <li><a href="/parametres" routerLink="parametres"><i class="fa fa-cog"></i>Paramétres</a></li>
       </ul>
   </div>

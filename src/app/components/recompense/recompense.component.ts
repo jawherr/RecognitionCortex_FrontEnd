@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecompenseComponent implements OnInit {
 
+  badge = './assets/images/tablet.png'
   constructor() { }
 
   ngOnInit(): void {

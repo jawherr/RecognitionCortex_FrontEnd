@@ -1,1 +1,515 @@
-<p>profil works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5 mb-4">
+      <div id="main-card">
+        <div class="cover-photo"></div>
+        <div class="photo">
+          <img
+            id="profil-image"
+            src="https://media-exp1.licdn.com/dms/image/C4E03AQEiW56RkIapEQ/profile-displayphoto-shrink_800_800/0/1645982794558?e=1664409600&v=beta&t=OBTETF-7X-zFqK35UJC7l94hRdxeWN3aVehorQnHh4I"
+            alt=""
+          />
+        </div>
+        <div class="content">
+          <h2 class="name">{{ user.username }}</h2>
+          <h3 class="fullstack">
+            Full Stack Engineer<br />
+            <a
+              href="https://www.youracclaim.com/badges/e678fb12-49ea-4609-8d97-622d7416880d"
+              class="certified"
+              target="_blank"
+              >35/300</a
+            >
+            <br />
+            Badges
+          </h3>
+        </div>
+        <div class="contact">
+          <ul>
+            <a
+              href="https://www.linkedin.com/in/abdeladhim-abbassi/"
+              target="_blank"
+            >
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Adhouma" target="_blank">
+              <i class="fa fa-github"></i>
+            </a>
+            <a href="https://twitter.io/Adhouma/" target="_blank">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="https://gmail.io/Adhouma/" target="_blank">
+              <i class="fa fa-envelope"></i>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7 mb-4">
+      <div id="bio-card">
+        <div class="bio-info">
+          <ul>
+            <a
+              href="https://www.linkedin.com/in/abdeladhim-abbassi/"
+              target="_blank"
+            >
+              <i class="fa fa-thumbs-up"></i>
+            </a>
+            <a href="https://github.com/Adhouma" target="_blank">
+              <i class="fa fa-photo"></i>
+            </a>
+            <a href="https://twitter.io/Adhouma/" target="_blank">
+              <i class="fa fa-comment"></i>
+            </a>
+          </ul>
+        </div>
+        <div class="bio-content">
+          <h4>Bio Graph</h4>
+          <div class="bio-row">
+            <p><span>First Name </span>: Camila</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Last Name </span>: Smith</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Country </span>: Australia</p>
+          </div>
+          <div class="bio-row">
+            <p><span>Birthday</span>: 13 July 1983</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="card-stat">
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab label="Statistiques">
+        <br/><br/>
+        <div class="container stat">
+          <div class="row">
+            <div class="col">
+              <div
+                class="card radius-10 border-start border-0 border-3 border-info"
+              >
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <p class="mb-0 text-secondary">Points</p>
+                      <h2 class="my-1 text-info">1200</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                class="card radius-10 border-start border-0 border-3 border-danger"
+              >
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <p class="mb-0 text-secondary">Vente</p>
+                      <h2 class="my-1 text-danger">103</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                class="card radius-10 border-start border-0 border-3 border-success"
+              >
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <p class="mb-0 text-secondary">Monnaie</p>
+                      <h2 class="my-1 text-success">8</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-6 row-cols-xl-10">
+            <h3>Badges: 8/15</h3>
+            <!--<h5>Voir +</h5>-->
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card-body">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <img id="badge-img" src="https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png" alt="" />
+                    <h4 class="my-2 text-info">YoloYolo</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card-body">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <img id="badge-img" src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" alt="" />
+                    <h4 class="my-1 text-info">PullShark</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card-body">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <img id="badge-img" src="https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default.png" alt="" />
+                    <h4 class="my-1 text-info">Quicdraw</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card-body">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <img id="badge-img" src="https://github.githubassets.com/images/modules/profile/achievements/starstruck-bronze.png" alt="" />
+                    <h4 class="my-1 text-info">Startruck</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-6 row-cols-xl-10">
+            <h4>MISSONS BONUS</h4>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div
+                class="card radius-10 border-start border-0 border-3 border-info"
+              >
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <p class="mb-0 text-secondary">Regarder la video</p>
+                      <h4 class="my-1 text-info">+50 points EXP</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                class="card radius-10 border-start border-0 border-3 border-danger"
+              >
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <p class="mb-0 text-secondary">Liker une photo</p>
+                      <h4 class="my-1 text-danger">+10 coins</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                class="card radius-10 border-start border-0 border-3 border-success"
+              >
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <p class="mb-0 text-secondary">Donner une idée</p>
+                      <h4 class="my-1 text-success">+20 Points</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Informations">
+        <br><br>
+        <div class="container bootstrap snippets bootdey">
+          <div class="panel-body inf-content">
+            <div class="row">
+              <div class="col-md-8">
+                <strong>Information</strong><br />
+                <div class="table-responsive">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <strong>
+                            <span
+                              class="glyphicon glyphicon-asterisk text-primary"
+                            ></span>
+                            Identificacion
+                          </strong>
+                        </td>
+                        <td class="text-primary">123456789</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong>
+                            <span
+                              class="glyphicon glyphicon-user text-primary"
+                            ></span>
+                            Name
+                          </strong>
+                        </td>
+                        <td class="text-primary">Bootdey</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong>
+                            <span
+                              class="glyphicon glyphicon-cloud text-primary"
+                            ></span>
+                            Lastname
+                          </strong>
+                        </td>
+                        <td class="text-primary">Bootstrap</td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <strong>
+                            <span
+                              class="glyphicon glyphicon-bookmark text-primary"
+                            ></span>
+                            Username
+                          </strong>
+                        </td>
+                        <td class="text-primary">bootnipets</td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <strong>
+                            <span
+                              class="glyphicon glyphicon-eye-open text-primary"
+                            ></span>
+                            Role
+                          </strong>
+                        </td>
+                        <td class="text-primary">Admin</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong>
+                            <span
+                              class="glyphicon glyphicon-envelope text-primary"
+                            ></span>
+                            Email
+                          </strong>
+                        </td>
+                        <td class="text-primary">noreply@email.com</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong>
+                            <span
+                              class="glyphicon glyphicon-calendar text-primary"
+                            ></span>
+                            created
+                          </strong>
+                        </td>
+                        <td class="text-primary">20 jul 20014</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong>
+                            <span
+                              class="glyphicon glyphicon-calendar text-primary"
+                            ></span>
+                            Modified
+                          </strong>
+                        </td>
+                        <td class="text-primary">20 jul 20014 20:00:00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Contacts">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="well well-white mini-profile-widget bootdey.com">
+                <div class="col-md-6">
+                  <div class="image-container">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                      class="avatar img-responsive"
+                      alt="avatar"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="details">
+                    <h4>Kevin Mckoy</h4>
+                    <hr />
+                    <div>Works at Bootdey</div>
+                    <!--<p class="mg-top-20"> 
+                                      <a href="javascript:void(0);" class="btn btn-blue">
+                                          <i class="fa fa-facebook fa-fw"></i>
+                                      </a>
+                                      <a href="javascript:void(0);" class="btn btn-info">
+                                          <i class="fa fa-twitter fa-fw"></i>
+                                      </a>
+                                      <a href="javascript:void(0);" class="btn btn-red">
+                                          <i class="fa fa-google-plus fa-fw"></i>
+                                      </a>
+                        </p>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="well well-purple mini-profile-widget bootdey.com">
+                <div class="col-md-6">
+                  <div class="image-container">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                      class="avatar img-responsive"
+                      alt="avatar"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="details">
+                    <h4>Kevin Mckoy</h4>
+                    <hr />
+                    <div>Works at Bootdey</div>
+                    <!--<p class="mg-top-20"> 
+                                      <a href="javascript:void(0);" class="btn btn-blue">
+                                          <i class="fa fa-facebook fa-fw"></i>
+                                      </a>
+                                      <a href="javascript:void(0);" class="btn btn-info">
+                                          <i class="fa fa-twitter fa-fw"></i>
+                                      </a>
+                                      <a href="javascript:void(0);" class="btn btn-red">
+                                          <i class="fa fa-google-plus fa-fw"></i>
+                                      </a>
+                                  </p>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="well well-blue mini-profile-widget">
+                <div class="col-md-6">
+                  <div class="image-container">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                      class="avatar img-responsive"
+                      alt="avatar"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="details">
+                    <h4>John Doe2</h4>
+                    <hr />
+                    <div>Works at Bootdey in big</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="well well-green mini-profile-widget">
+                <div class="col-md-6">
+                  <div class="image-container">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                      class="avatar img-responsive"
+                      alt="avatar"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="details">
+                    <h4>John Doe2</h4>
+                    <hr />
+                    <div>Works at Bootdey in big</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="well well-pink mini-profile-widget bootdey.com">
+                <div class="col-md-6">
+                  <div class="image-container">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar4.png"
+                      class="avatar img-responsive"
+                      alt="avatar"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="details">
+                    <h4>Kevin Mckoy</h4>
+                    <hr />
+                    <div>Works at Bootdey</div>
+                    <!--<p class="mg-top-20"> 
+                                      <a href="javascript:void(0);" class="btn btn-blue">
+                                          <i class="fa fa-facebook fa-fw"></i>
+                                      </a>
+                                      <a href="javascript:void(0);" class="btn btn-info">
+                                          <i class="fa fa-twitter fa-fw"></i>
+                                      </a>
+                                      <a href="javascript:void(0);" class="btn btn-red">
+                                          <i class="fa fa-google-plus fa-fw"></i>
+                                      </a>
+                                  </p>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="well well-red mini-profile-widget bootdey.com">
+                <div class="col-md-6">
+                  <div class="image-container">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                      class="avatar img-responsive"
+                      alt="avatar"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="details">
+                    <h4>Kevin Mckoy</h4>
+                    <hr />
+                    <div>Works at Bootdey</div>
+                    <!--<p class="mg-top-20"> 
+                                      <a href="javascript:void(0);" class="btn btn-blue">
+                                          <i class="fa fa-facebook fa-fw"></i>
+                                      </a>
+                                      <a href="javascript:void(0);" class="btn btn-info">
+                                          <i class="fa fa-twitter fa-fw"></i>
+                                      </a>
+                                      <a href="javascript:void(0);" class="btn btn-red">
+                                          <i class="fa fa-google-plus fa-fw"></i>
+                                      </a>
+                                  </p>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  <br>
+</div>

@@ -36,3 +36,8 @@
     justify-content: space-between;
     padding: 177px 130px 33px 95px;
   }
+
+  .container{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}

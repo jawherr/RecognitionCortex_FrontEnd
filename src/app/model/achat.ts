@@ -1,26 +1,26 @@
 import { Utilisateur } from "./utilisateur";
 
-export interface Domaine 
+export interface Achat 
 {
-    id?: number ; 
-    nom : string ;
-    nombre : number ;
-    montant : number ;
+    id?: number; 
+    nom : string;
+    nombre : number;
+    montant : number;
     utilisateur? : Utilisateur;
 }
 
-export class Domaine 
+export class Achat 
 {
-    id?: number ; 
-    nom : string ;
-    nombre : number ;
-    montant : number ;
-    utilisateur? : Utilisateur ;
+    id?: number; 
+    nom : string;
+    nombre : number;
+    montant : number;
+    utilisateur? : Utilisateur;
 
     constructor(nom: string, nombre: number, montant: number) {
-        this.nom = nom ;
-        this.nombre = nombre ;
-        this.montant = montant ;
+        this.nom = nom;
+        this.nombre = nombre;
+        this.montant = montant;
       }
     
 }

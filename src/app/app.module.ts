@@ -9,6 +9,13 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +30,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PublicationComponent } from './components/publication/publication.component';
 import { ProfilComponent } from './components/profil/profil.component';
-import { BadgesComponent } from './components/badges/badges.component';
 import { ClassementComponent } from './components/classement/classement.component';
 import { RecompenseComponent } from './components/recompense/recompense.component';
 import { MessagerieComponent } from './components/messagerie/messagerie.component';
@@ -34,7 +40,7 @@ import { CommentaireComponent } from './components/commentaire/commentaire.compo
 import { DossierComponent } from './components/dossier/dossier.component';
 import { TacheComponent } from './components/tache/tache.component';
 import { BadgeComponent } from './components/badge/badge.component';
-
+MatSelectModule
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +51,6 @@ import { BadgeComponent } from './components/badge/badge.component';
     DashboardComponent,
     PublicationComponent,
     ProfilComponent,
-    BadgesComponent,
     ClassementComponent,
     RecompenseComponent,
     MessagerieComponent,
@@ -72,7 +77,14 @@ import { BadgeComponent } from './components/badge/badge.component';
     MatIconModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTabsModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatListModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

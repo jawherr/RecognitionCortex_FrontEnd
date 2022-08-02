@@ -1,25 +1,24 @@
 import { Utilisateur } from "./utilisateur";
 
-export interface Cadeaux 
+export interface Recompense
 {
     id?: number; 
     nom : string; 
-    valeur : number; 
+    valeur : number;
     utilisateur? : Utilisateur;
 }
 
-export class Cadeaux 
+export class Recompense
 {
     id?: number; 
     nom : string; 
-    valeur : number; 
+    valeur : number;
     utilisateur? : Utilisateur;
 
 
-
-    constructor(nom: string,valeur: number) {
+    constructor(nom: string,valeur : number) {
         this.nom = nom;
-        this.valeur = valeur;
+        this.valeur = valeur; 
       }
     
 }

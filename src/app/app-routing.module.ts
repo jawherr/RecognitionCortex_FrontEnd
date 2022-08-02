@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BadgesComponent } from './components/badges/badges.component';
+import { BadgeComponent } from './components/badge/badge.component';
 import { ClassementComponent } from './components/classement/classement.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EquipeComponent } from './components/equipe/equipe.component';
@@ -16,14 +16,14 @@ import { TodolistComponent } from './components/todolist/todolist.component';
 import { CommentaireComponent } from './components/commentaire/commentaire.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'header', component: HeaderComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'publication', component: PublicationComponent },
   { path: 'profil', component: ProfilComponent },
-  { path: 'badges', component: BadgesComponent },
+  { path: 'badge', component: BadgeComponent },
   { path: 'equipe', component: EquipeComponent },
   { path: 'classement', component: ClassementComponent },
   { path: 'recompense', component: RecompenseComponent },

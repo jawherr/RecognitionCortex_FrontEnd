@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Utilisateur } from '../model/utilisateur';
+import { API_URL } from '../../environments/environment';
 
-const API_URL = 'http://localhost:8090';
 const httpOptions = { headers : new HttpHeaders({'Content-Type': 'application/json'})
 }; 
 
@@ -12,9 +12,11 @@ const httpOptions = { headers : new HttpHeaders({'Content-Type': 'application/js
 })
 export class UtilisateurService {
 
-  constructor(
-    private http : HttpClient
-  ) { }
+  constructor(private http : HttpClient) { }
+
+  getPublicContent(): Observable<any> {
+    return this.http.get(API_URL + 'all', { responseType: 'text' });
+  }
 
   getUtilisateurs(): Observable<Utilisateur[]> {
     return this.http.get<Utilisateur[]>(API_URL +'/utilisateur',httpOptions);
