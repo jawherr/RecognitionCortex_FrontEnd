@@ -15,7 +15,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 export class BadgeComponent implements OnInit {
 
-  badge = './assets/images/badge-icone.png'
   constructor(
     private badgeService : BadgeService,
     private token : TokenStorageService ) { }

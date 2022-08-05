@@ -5,6 +5,7 @@ import { Utilisateur } from '../models/utilisateur';
 import { API_URL } from '../../environments/environment';
 import { JwtResponse } from '../response/JwtResponse';
 import { CookieService } from 'ngx-cookie-service';
+import {environment} from "../../environments/environment";
 
 const httpOptions = { headers : new HttpHeaders({'Content-Type': 'application/json'})
 }; 
@@ -51,6 +52,19 @@ export class UtilisateurService {
   public deleteUtilisateur( id : number) : Observable<void> 
   {
     return this.http.delete<void>(API_URL+`/utilisateur/${id}`); 
+  }
+
+  public getUsers():Observable<Array<Utilisateur>>{
+    return this.http.get<Array<Utilisateur>>(environment.backendHost+"/users")
+  }
+  public searchUsers(keyword : string):Observable<Array<Utilisateur>>{
+    return this.http.get<Array<Utilisateur>>(environment.backendHost+"/users/search?keyword="+keyword)
+  }
+  public saveUser(user: Utilisateur):Observable<Utilisateur>{
+    return this.http.post<Utilisateur>(environment.backendHost+"/users",user);
+  }
+  public deleteUser(id: number){
+    return this.http.delete(environment.backendHost+"/users/"+id);
   }
 
 }

@@ -5,24 +5,25 @@
       <div class="row container">
         <a class="nav-item nav-link "
         routerLink="/category/0">
-        Books
+        Telepphonie
         </a>
         <a class="nav-item nav-link"
           routerLink="/category/1">
-          Food
+          Bureautique
         </a>
         <a class="nav-item nav-link "
           routerLink="/category/2">
-          Clothes
+          Informatique
         </a>
         <a class="nav-item nav-link"
           routerLink="/category/3">
-          Drink
+          TV | PHOTO & SON
         </a>
       </div>
+      <br>
       <div class="row card-deck text-center">
-        <div *ngFor="let productInfo of page?.content" class="col-lg-4 ">
-          <div class="card mb-4"  >
+        <div *ngFor="let productInfo of page?.content" class="col-lg-3 ">
+          <div class="card mb-4">
             <img height="50%" class="card-img-top" src="{{productInfo.productIcon}}" alt="{{productInfo.productName}}">
             <div class="card-body">
               <h4 class="card-title ">{{productInfo.productName}}</h4>

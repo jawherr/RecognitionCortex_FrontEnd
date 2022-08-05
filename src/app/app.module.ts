@@ -17,6 +17,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -48,12 +49,15 @@ import { PaginationComponent } from './components/parts/pagination/pagination.co
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { NavrhComponent } from './components/naverh/navrh.component';
 import { BodyComponent } from './components/body/body.component';
-import { DefaultComponent } from './admin/layouts/default/default.component';
 import { DefaultModule } from './admin/layouts/default/default.module';
 import {CookieService} from "ngx-cookie-service";
 import { JwtInterceptor } from './_interceptors/jwt-interceptor.service';
 import { ErrorInterceptor } from './_interceptors/error-interceptor.service';
 import { CartComponent } from './components/cart/cart.component';
+import { AccountsComponent } from './components/accounts/accounts.component';
+import { UserAccountsComponent } from './components/user-accounts/user-accounts.component';
+import { UsersComponent } from './components/users/users.component';
+import { NewUserComponent } from './components/new-user/new-user.component';
 
 MatSelectModule
 @NgModule({
@@ -72,6 +76,8 @@ MatSelectModule
     PaginationComponent,
     ClassementComponent,
     RecompenseComponent,
+    AccountsComponent,
+    UserAccountsComponent,
     MessagerieComponent,
     TodolistComponent,
     ParametresComponent,
@@ -82,7 +88,9 @@ MatSelectModule
     BadgeComponent,
     NavrhComponent,
     BodyComponent,
-    CartComponent
+    CartComponent,
+    UsersComponent,
+    NewUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -108,7 +116,8 @@ MatSelectModule
     MatDividerModule,
     MatListModule,
     MatMenuModule,
-    DefaultModule
+    DefaultModule,
+    MatGridListModule
   ],
   providers: [CookieService,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},

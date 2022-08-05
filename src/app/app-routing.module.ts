@@ -19,6 +19,10 @@ import { DetailComponent } from './components/product-detail/detail.component';
 import { DefaultComponent } from './admin/layouts/default/default.component';
 import { PostsComponent } from './admin/modules/posts/posts.component';
 import { CartComponent } from './components/cart/cart.component';
+import { AccountsComponent } from './components/accounts/accounts.component';
+import { UserAccountsComponent } from './components/user-accounts/user-accounts.component';
+import { UsersComponent } from './components/users/users.component';
+import { NewUserComponent } from './components/new-user/new-user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -43,6 +47,10 @@ const routes: Routes = [
   { path: 'profil', component: ProfilComponent },
   { path: 'cart', component: CartComponent },
   { path: 'badge', component: BadgeComponent },
+  { path :"users", component : UsersComponent},
+  { path :"accounts", component : AccountsComponent},
+  { path :"new-user", component : NewUserComponent},
+  { path :"user-accounts/:id", component : UserAccountsComponent},
   { path: 'equipe', component: EquipeComponent },
   { path: 'classement', component: ClassementComponent },
   { path: 'recompense', component: RecompenseComponent },

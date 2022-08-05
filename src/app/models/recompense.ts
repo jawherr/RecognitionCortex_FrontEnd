@@ -4,7 +4,8 @@ export interface Recompense
 {
     id?: number; 
     nom : string; 
-    valeur : number;
+    image : string;
+    description : string; 
     utilisateur? : Utilisateur;
 }
 
@@ -12,13 +13,15 @@ export class Recompense
 {
     id?: number; 
     nom : string; 
-    valeur : number;
+    image : string;
+    description : string; 
     utilisateur? : Utilisateur;
 
 
-    constructor(nom: string,valeur : number) {
+    constructor(nom: string,image: string, description: string) {
         this.nom = nom;
-        this.valeur = valeur; 
+        this.image = image;
+        this.description = description;
       }
     
 }

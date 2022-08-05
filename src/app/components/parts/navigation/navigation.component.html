@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" [routerLink]="root">
+    <a class="navbar-brand">
         <img src="/assets/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
         E-Shop
     </a>
@@ -14,19 +14,19 @@
 
             <a class="nav-item nav-link "
                routerLink="/category/0">
-                Books
+               Telepphonie
             </a>
             <a class="nav-item nav-link"
                routerLink="/category/1">
-                Food
+               Bureautique
             </a>
             <a class="nav-item nav-link "
                routerLink="/category/2">
-                Clothes
+               Informatique
             </a>
             <a class="nav-item nav-link"
                routerLink="/category/3">
-                Drink
+                TV | PHOTO & SON
             </a>
 
         </div>
@@ -46,7 +46,7 @@
                 <a class="nav-item nav-link " routerLink="/profile">
                     {{name}}
                 </a>
-                <a class="nav-item nav-link " (click)="logout()" routerLink="/login" [queryParams]="{logout: true}">
+                <a class="nav-item nav-link " (click)="logout()" routerLink="/login">
                     Sign Out
                 </a>
             </ng-container>

@@ -21,7 +21,7 @@ export const navbarData = [
     },
     {
         routeLink: 'equipe',
-        icon: 'fal fa-users',
+        icon: 'fal fa-users-crown',
         label: 'Equipe'
     },
     {
@@ -45,8 +45,30 @@ export const navbarData = [
         label: 'Messagerie'
     },
     {
+        routeLink: 'accounts',
+        icon: 'fal fa-address-book',
+        label: 'Accounts'
+    },
+    {
+        routeLink: 'users',
+        icon: 'fal fa-users',
+        label: 'Users',
+        submenuLevel1: [
+            {
+                routeLink: 'users',
+                icon: 'fal fa-user', // icon if needed
+                label: 'Search Users',
+            },
+            {
+                routeLink: 'new-user',
+                icon: 'fal fa-user', // icon if needed
+                label: 'New Users',
+            }
+        ]
+    },
+    {
         routeLink: 'parametres',
         icon: 'fal fa-cog',
         label: 'Parametres'
-    }
+    },
 ];

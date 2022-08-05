@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import { JwtResponse } from 'src/app/response/JwtResponse';
 import { UtilisateurService } from 'src/app/services/utilisateur.service';
 import { Role } from 'src/app/enum/Role';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
     selector: 'app-navigation',
@@ -12,6 +13,7 @@ import { Role } from 'src/app/enum/Role';
 })
 export class NavigationComponent implements OnInit, OnDestroy {
 
+    utilisateur : any;
 
     currentUtilisateurSubscription: Subscription;
     name$;
@@ -22,7 +24,9 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
     constructor(private userService: UtilisateurService,
                 private router: Router,
+                private tokenStorageService: TokenStorageService
     ) {
+        this.utilisateur = this.tokenStorageService.getUtilisateur();
 
     }
 
@@ -44,9 +48,9 @@ export class NavigationComponent implements OnInit, OnDestroy {
         // this.name$.unsubscribe();
     }
 
-    /*logout() {
-        this.userService.logout();
-        // this.router.navigate(['/login'], {queryParams: {logout: 'true'}} );
-    }*/
+    logout(): void {
+        this.tokenStorageService.signOut();
+        window.location.reload();
+    }
 
 }

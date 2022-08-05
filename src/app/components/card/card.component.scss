@@ -24,6 +24,9 @@
 .d-flex{
     color: #fff;
 }
+.card-deck{
+  justify-content: center;
+}
 img{
   background: #fff;
   width: 60%;
@@ -32,5 +35,4 @@ img{
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
 }

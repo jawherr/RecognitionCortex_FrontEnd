@@ -1,183 +1,41 @@
 <div class="container-fluid page">
     <div class="d-flex page__box p-5 mt-2">Récompense</div>
         <br>
-        <div class="container">
+        <div>
             <div class="row">
-                <div class="col-lg-6 mb-5">
+                <div class="col-lg-4 mb-6 text-center">
                     <mat-card>
-                        info
+                        <mat-card-title>Comment gagner des récompenses ?</mat-card-title>
+                        <mat-card-content>
+                            Au cours du challande vous allez pouvoir remporter 
+                            des jetons. Réalisez tous les objectifs et missions
+                            proposées pour remporter le plus de jetons possivbles 
+                        </mat-card-content>
+                        <h2 class="info">SOLDE ACTUEL DE JETONS 
+                            <i class="fal fa-coins"></i> 230</h2>
                     </mat-card>
                 </div>
-                <div class="col-lg-6 mb-5">
-                    <mat-card>
-                        info
+                <div class="col-lg-8 mb-6 text-center">
+                    <mat-card class="bg">
+                        <mat-card-title>Séminaire au Forêt</mat-card-title>
+                        <mat-card-content>
+                            <button class="btn btn-warning">
+                                <i class="bi bi-search"></i>
+                                <h3>Reste 7470 <i class="fal fa-coins"></i></h3> 
+                              </button>
+                        </mat-card-content>
                     </mat-card>
                 </div>
-                <div class="col-lg-3 mb-5">
+                <div class="col-lg-2 mb-5" *ngFor="let recompense of recompenses">
                     <div id="main-card">
                         <div class="cover-photo"></div>
                         <div class="photo">
-                            <img [src]="badge" alt="">
+                            <img src="{{recompense.image}}" alt="">
                         </div>
                         <div class="content">
-                            <h2 class="name">Name</h2>
+                            <h2 class="name">{{recompense.nom}}</h2>
                             <p>
-                                Le Lorem Ipsum est simplement du faux texte employé dans la composition
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 mb-5">
-                    <div id="main-card">
-                        <div class="cover-photo"></div>
-                        <div class="photo">
-                            <img [src]="badge" alt="">
-                        </div>
-                        <div class="content">
-                            <h2 class="name">Name</h2>
-                            <p>
-                                Le Lorem Ipsum est simplement du faux texte employé dans la composition
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div id="main-card">
-                        <div class="cover-photo"></div>
-                        <div class="photo">
-                            <img [src]="badge" alt="">
-                        </div>
-                        <div class="content">
-                            <h2 class="name">Name</h2>
-                            <p>
-                                Le Lorem Ipsum est simplement du faux texte employé dans la composition
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div id="main-card">
-                        <div class="cover-photo"></div>
-                        <div class="photo">
-                            <img [src]="badge" alt="">
-                        </div>
-                        <div class="content">
-                            <h2 class="name">Name</h2>
-                            <p>
-                                Le Lorem Ipsum est simplement du faux texte employé dans la composition
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div id="main-card">
-                        <div class="cover-photo"></div>
-                        <div class="photo">
-                            <img [src]="badge" alt="">
-                        </div>
-                        <div class="content">
-                            <h2 class="name">Name</h2>
-                            <p>
-                                Le Lorem Ipsum est simplement du faux texte employé dans la composition
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div id="main-card">
-                        <div class="cover-photo"></div>
-                        <div class="photo">
-                            <img [src]="badge" alt="">
-                        </div>
-                        <div class="content">
-                            <h2 class="name">Name</h2>
-                            <p>
-                                Le Lorem Ipsum est simplement du faux texte employé dans la composition
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div id="main-card">
-                        <div class="cover-photo"></div>
-                        <div class="photo">
-                            <img [src]="badge" alt="">
-                        </div>
-                        <div class="content">
-                            <h2 class="name">Name</h2>
-                            <p>
-                                Le Lorem Ipsum est simplement du faux texte employé dans la composition
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div id="main-card">
-                        <div class="cover-photo"></div>
-                        <div class="photo">
-                            <img [src]="badge" alt="">
-                        </div>
-                        <div class="content">
-                            <h2 class="name">Name</h2>
-                            <p>
-                                Le Lorem Ipsum est simplement du faux texte employé dans la composition
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div id="main-card">
-                        <div class="cover-photo"></div>
-                        <div class="photo">
-                            <img [src]="badge" alt="">
-                        </div>
-                        <div class="content">
-                            <h2 class="name">Name</h2>
-                            <p>
-                                Le Lorem Ipsum est simplement du faux texte employé dans la composition
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div id="main-card">
-                        <div class="cover-photo"></div>
-                        <div class="photo">
-                            <img [src]="badge" alt="">
-                        </div>
-                        <div class="content">
-                            <h2 class="name">Name</h2>
-                            <p>
-                                Le Lorem Ipsum est simplement du faux texte employé dans la composition
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div id="main-card">
-                        <div class="cover-photo"></div>
-                        <div class="photo">
-                            <img [src]="badge" alt="">
-                        </div>
-                        <div class="content">
-                            <h2 class="name">Name</h2>
-                            <p>
-                                Le Lorem Ipsum est simplement du faux texte employé dans la composition
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div id="main-card">
-                        <div class="cover-photo"></div>
-                        <div class="photo">
-                            <img [src]="badge" alt="">
-                        </div>
-                        <div class="content">
-                            <h2 class="name">Name</h2>
-                            <p>
-                                Le Lorem Ipsum est simplement du faux texte employé dans la composition
+                                {{recompense.description}}
                             </p>
                         </div>
                     </div>
