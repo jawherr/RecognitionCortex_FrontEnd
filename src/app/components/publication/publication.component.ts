@@ -4,12 +4,12 @@ import { TokenStorageService } from '../../services/token-storage.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-import { Publication } from '../../model/publication';
+import { Publication } from '../../models/publication';
 import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-publication',
   templateUrl: './publication.component.html',
-  styleUrls: ['./publication.component.css']
+  styleUrls: ['./publication.component.scss']
 })
 
 
@@ -20,7 +20,7 @@ export class PublicationComponent implements OnInit {
     private token : TokenStorageService ) { }
 
   publications? : Publication[] ;
-  currentUser : any ;
+  currentUtilisateur : any ;
   userPermission : boolean = false ;
   dataSource!: MatTableDataSource<Publication>;
   displayedColumns: string[] = ['id', 'description', 'nb_like', 'utilisateur','update','delete'];
@@ -34,7 +34,7 @@ export class PublicationComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPublications() ;
-    this.currentUser = this.token.getUtilisateur();
+    this.currentUtilisateur = this.token.getUtilisateur();
     this.userPermission = this.permissions();
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
@@ -67,7 +67,7 @@ export class PublicationComponent implements OnInit {
 
   public permissions(): boolean
   {
-    return this.currentUser.roles.includes("ROLE_USER");
+    return this.currentUtilisateur.roles.includes("ROLE_USER");
   }
 
   logData(row: any) {

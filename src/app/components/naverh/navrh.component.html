@@ -1,0 +1,30 @@
+<div class="navrh" [ngClass]="collapsed ? 'navrh-collapsed': ''" *ngIf="isLoggedIn">
+    <div class="logo-container">
+        <button class="logo" (click)="toggleCollapse()">
+            <mat-icon>
+                menu
+            </mat-icon>
+        </button>
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">Recognition<br>Cortex</div>
+        <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+    <ul class="navrh-nav">
+        <li class="navrh-nav-item" *ngFor="let data of navData">
+            <a class="navrh-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">
+                <i class="navrh-link-icon" [class]="data.icon"></i>
+                <span class="navrh-link-text" @fadeInOut *ngIf="collapsed">
+                    {{data.label}}
+                </span>
+            </a>
+        </li>
+        <li>
+            <button (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                Logout
+              </button>
+        </li>
+    </ul>
+</div>

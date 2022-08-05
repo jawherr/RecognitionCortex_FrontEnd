@@ -4,12 +4,12 @@ import { TokenStorageService } from '../../services/token-storage.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-import { Badge } from '../../model/badge';
+import { Badge } from '../../models/badge';
 import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-badge',
   templateUrl: './badge.component.html',
-  styleUrls: ['./badge.component.css']
+  styleUrls: ['./badge.component.scss']
 })
 
 
@@ -21,7 +21,7 @@ export class BadgeComponent implements OnInit {
     private token : TokenStorageService ) { }
 
   badges? : Badge[] ;
-  currentUser : any ;
+  currentUtilisateur : any ;
   userPermission : boolean = false ;
   dataSource!: MatTableDataSource<Badge>;
   displayedColumns: string[] = ['id', 'nom', 'image', 'description', 'utilisateur','update','delete'];
@@ -35,7 +35,7 @@ export class BadgeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBadges() ;
-    this.currentUser = this.token.getUtilisateur();
+    this.currentUtilisateur = this.token.getUtilisateur();
     this.userPermission = this.permissions();
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
@@ -68,7 +68,7 @@ export class BadgeComponent implements OnInit {
 
   public permissions(): boolean
   {
-    return this.currentUser.roles.includes("ROLE_USER");
+    return this.currentUtilisateur.roles.includes("ROLE_USER");
   }
 
   logData(row: any) {

@@ -1,233 +1,237 @@
-<div class="container">
-  <div class="row">
-    <!--<div class="col-lg-4">
-      <div id="main-card">
-        <div class="cover-photo"></div>
-        <div class="photo">
-          <img
-            id="photo"
-            src="https://media-exp1.licdn.com/dms/image/C4E03AQEiW56RkIapEQ/profile-displayphoto-shrink_800_800/0/1645982794558?e=1664409600&v=beta&t=OBTETF-7X-zFqK35UJC7l94hRdxeWN3aVehorQnHh4I"
-            alt=""
-          />
-        </div>
-        <div class="content">
-          <h2 class="name">Jawher Kallel</h2>
-          <h3 class="fullstack">
-            Full Stack Engineer<br />
-            <br />
-            1627 points
-          </h3>
-        </div>
-        <div class="contact">
-          <ul>
-            <a
-              href="https://www.linkedin.com/in/abdeladhim-abbassi/"
-              target="_blank"
-            >
-              <i class="fa fa-info"></i>
-            </a>
-            <a href="https://github.com/Adhouma" target="_blank">
-              <i class="fa fa-file"></i>
-            </a>
-            <a href="https://twitter.io/Adhouma/" target="_blank">
-              <i class="fa fa-cog"></i>
-            </a>
-            <a href="https://gmail.io/Adhouma/" target="_blank">
-              <i class="fa fa-sign-out"></i>
-            </a>
-          </ul>
-        </div>
-      </div>
-    </div>-->
-    <!--class="col-lg-8"-->
-    <div id="card-stat">
-      <div class="row">
-        <mat-tab-group mat-stretch-tabs>
-          <mat-tab>
-            <ng-template matTabContent>
-              <ng-template mat-tab-label> Membre & équipe </ng-template>
-              <br>
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <mat-tab-group mat-stretch-tabs>
-                      <mat-tab label="Membre">
-                        <br><br>
-                        <div class="container">
-                          <div class="row">
-                            <div class="col-lg-2">
-                              <mat-card>info</mat-card>
-                            </div>
-                            <div class="col-lg-3">
-                              <mat-card> 11/150(disponible) </mat-card>
-                            </div>
-                            <div class="col-lg-3">
-                              <mat-card> Membres activés </mat-card>
-                            </div>
-                            <div class="col-lg-3">
-                              <mat-card>
-                                <input
-                                  type="text"
-                                  matInput
-                                  placeholder="Search"
-                                />
-                              </mat-card>
-                            </div>
-                            <div class="col-lg-1">
-                              <mat-card></mat-card>
-                            </div>
-                            <div class="col-lg-12">
-                                <br>
-                              <mat-card>
-                                <mat-paginator
-                                  [pageSizeOptions]="[5, 10, 20]"
-                                  showFirstLastButtons
-                                ></mat-paginator>
+<div class="container-fluid page">
+  <div class="d-flex page__box p-5 mt-2">Equipe</div>
+      <br>
+      <div class="container">
+        <div class="row">
+          <!--<div class="col-lg-4">
+            <div id="main-card">
+              <div class="cover-photo"></div>
+              <div class="photo">
+                <img
+                  id="photo"
+                  src="https://media-exp1.licdn.com/dms/image/C4E03AQEiW56RkIapEQ/profile-displayphoto-shrink_800_800/0/1645982794558?e=1664409600&v=beta&t=OBTETF-7X-zFqK35UJC7l94hRdxeWN3aVehorQnHh4I"
+                  alt=""
+                />
+              </div>
+              <div class="content">
+                <h2 class="name">Jawher Kallel</h2>
+                <h3 class="fullstack">
+                  Full Stack Engineer<br />
+                  <br />
+                  1627 points
+                </h3>
+              </div>
+              <div class="contact">
+                <ul>
+                  <a
+                    href="https://www.linkedin.com/in/abdeladhim-abbassi/"
+                    target="_blank"
+                  >
+                    <i class="fa fa-info"></i>
+                  </a>
+                  <a href="https://github.com/Adhouma" target="_blank">
+                    <i class="fa fa-file"></i>
+                  </a>
+                  <a href="https://twitter.io/Adhouma/" target="_blank">
+                    <i class="fa fa-cog"></i>
+                  </a>
+                  <a href="https://gmail.io/Adhouma/" target="_blank">
+                    <i class="fa fa-sign-out"></i>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>-->
+          <!--class="col-lg-8"-->
+          <div id="card-stat">
+            <div class="row">
+              <mat-tab-group mat-stretch-tabs>
+                <mat-tab>
+                  <ng-template matTabContent>
+                    <ng-template mat-tab-label> Membre & équipe </ng-template>
+                    <br>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <mat-tab-group mat-stretch-tabs>
+                            <mat-tab label="Membre">
+                              <br><br>
+                              <div class="container">
                                 <div class="row">
-                                  <div class="col-lg-2 mb-5">
+                                  <div class="col-lg-2">
+                                    <mat-card>info</mat-card>
+                                  </div>
+                                  <div class="col-lg-3">
+                                    <mat-card> 11/150(disponible) </mat-card>
+                                  </div>
+                                  <div class="col-lg-3">
+                                    <mat-card> Membres activés </mat-card>
+                                  </div>
+                                  <div class="col-lg-3">
                                     <mat-card>
-                                      <img
-                                        src="https://springer-hagen.de/wp-content/uploads/2017/03/testy3-1-1.png"
-                                        alt=""
-                                        width="100%"
+                                      <input
+                                        type="text"
+                                        matInput
+                                        placeholder="Search"
                                       />
-                                      <h3 class="name">Martin</h3>
                                     </mat-card>
                                   </div>
-                                  <div class="col-lg-2 mb-5">
-                                    <mat-card>
-                                      <img
-                                        src="https://franchisematch.com/wp-content/uploads/2015/02/john-doe.jpg"
-                                        alt=""
-                                        width="100%"
-                                      />
-                                      <h3 class="name">Sebastian</h3>
-                                    </mat-card>
+                                  <div class="col-lg-1">
+                                    <mat-card></mat-card>
                                   </div>
-                                  <div class="col-lg-2 mb-5">
+                                  <div class="col-lg-12">
+                                      <br>
                                     <mat-card>
-                                      <img
-                                        src="https://salafanatic.com/wp-content/uploads/2017/10/speaker3-min.jpg"
-                                        alt=""
-                                        width="100%"
-                                      />
-                                      <h3 class="name">Ahmed</h3>
-                                    </mat-card>
-                                  </div>
-                                  <div class="col-lg-2 mb-5">
-                                    <mat-card>
-                                      <img
-                                        src="https://bidinnovacion.org/economiacreativa/wp-content/uploads/2014/10/speaker-3.jpg"
-                                        alt=""
-                                        width="100%"
-                                      />
-                                      <h3 class="name">Farouk</h3>
-                                    </mat-card>
-                                  </div>
-                                  <div class="col-lg-2 mb-5">
-                                    <mat-card>
-                                      <img
-                                        src="http://afernandes.adv.br/wp-content/uploads/Team-Member-3.jpg"
-                                        alt=""
-                                        width="100%"
-                                      />
-                                      <h3 class="name">Ali</h3>
-                                    </mat-card>
-                                  </div>
-                                  <div class="col-lg-2 mb-5">
-                                    <mat-card>
-                                      <img
-                                        src="https://fitbusiness.org/wp-content/uploads/2014/10/speaker-2-v2-2.jpg"
-                                        alt=""
-                                        width="100%"
-                                      />
-                                      <h3 class="name">Rim</h3>
-                                    </mat-card>
-                                  </div>
-                                  <div class="col-lg-2 mb-5">
-                                    <mat-card>
-                                      <img
-                                        src="http://iidtindia.in/images/help/teacher3.jpg"
-                                        alt=""
-                                        width="100%"
-                                      />
-                                      <h3 class="name">Hanna</h3>
-                                    </mat-card>
-                                  </div>
-                                  <div class="col-lg-2 mb-5">
-                                    <mat-card>
-                                      <img
-                                        src="https://pinotmasters.sk/wp-content/uploads/2015/04/speaker-1-v2.jpg"
-                                        alt=""
-                                        width="100%"
-                                      />
-                                      <h3 class="name">Aicha</h3>
-                                    </mat-card>
-                                  </div>
-                                  <div class="col-lg-2 mb-5">
-                                    <mat-card>
-                                      <img
-                                        src="https://cardealer.potenzaglobalsolutions.com/wp-content/uploads/2017/01/01-5-430x450.jpg"
-                                        alt=""
-                                        width="100%"
-                                      />
-                                      <h3 class="name">Mariem</h3>
-                                    </mat-card>
-                                  </div>
-                                  <div class="col-lg-2 mb-5">
-                                    <mat-card>
-                                      <img
-                                        src="https://www.spacerocketadvertising.com/wp-content/uploads/2021/02/team-1.jpg"
-                                        alt=""
-                                        width="100%"
-                                      />
-                                      <h3 class="name">Ramzi</h3>
-                                    </mat-card>
-                                  </div>
-                                  <div class="col-lg-2 mb-5">
-                                    <mat-card>
-                                      <img
-                                        src="https://oodp.ca/media/tutor-8.jpg"
-                                        alt=""
-                                        width="100%"
-                                      />
-                                      <h3 class="name">Anis</h3>
-                                    </mat-card>
-                                  </div>
-                                  <div class="col-lg-2 mb-5">
-                                    <mat-card>
-                                      <img
-                                        src="http://learnyzen.com/wp-content/uploads/2017/08/test1-481x385.png"
-                                        alt=""
-                                        width="100%"
-                                      />
-                                      <h3 class="name">Tarek</h3>
+                                      <mat-paginator
+                                        [pageSizeOptions]="[5, 10, 20]"
+                                        showFirstLastButtons
+                                      ></mat-paginator>
+                                      <div class="row">
+                                        <div class="col-lg-2 mb-5">
+                                          <mat-card>
+                                            <img
+                                              src="https://springer-hagen.de/wp-content/uploads/2017/03/testy3-1-1.png"
+                                              alt=""
+                                              width="100%"
+                                            />
+                                            <h3 class="name">Martin</h3>
+                                          </mat-card>
+                                        </div>
+                                        <div class="col-lg-2 mb-5">
+                                          <mat-card>
+                                            <img
+                                              src="https://franchisematch.com/wp-content/uploads/2015/02/john-doe.jpg"
+                                              alt=""
+                                              width="100%"
+                                            />
+                                            <h3 class="name">Sebastian</h3>
+                                          </mat-card>
+                                        </div>
+                                        <div class="col-lg-2 mb-5">
+                                          <mat-card>
+                                            <img
+                                              src="https://salafanatic.com/wp-content/uploads/2017/10/speaker3-min.jpg"
+                                              alt=""
+                                              width="100%"
+                                            />
+                                            <h3 class="name">Ahmed</h3>
+                                          </mat-card>
+                                        </div>
+                                        <div class="col-lg-2 mb-5">
+                                          <mat-card>
+                                            <img
+                                              src="https://bidinnovacion.org/economiacreativa/wp-content/uploads/2014/10/speaker-3.jpg"
+                                              alt=""
+                                              width="100%"
+                                            />
+                                            <h3 class="name">Farouk</h3>
+                                          </mat-card>
+                                        </div>
+                                        <div class="col-lg-2 mb-5">
+                                          <mat-card>
+                                            <img
+                                              src="http://afernandes.adv.br/wp-content/uploads/Team-Member-3.jpg"
+                                              alt=""
+                                              width="100%"
+                                            />
+                                            <h3 class="name">Ali</h3>
+                                          </mat-card>
+                                        </div>
+                                        <div class="col-lg-2 mb-5">
+                                          <mat-card>
+                                            <img
+                                              src="https://fitbusiness.org/wp-content/uploads/2014/10/speaker-2-v2-2.jpg"
+                                              alt=""
+                                              width="100%"
+                                            />
+                                            <h3 class="name">Rim</h3>
+                                          </mat-card>
+                                        </div>
+                                        <div class="col-lg-2 mb-5">
+                                          <mat-card>
+                                            <img
+                                              src="http://iidtindia.in/images/help/teacher3.jpg"
+                                              alt=""
+                                              width="100%"
+                                            />
+                                            <h3 class="name">Hanna</h3>
+                                          </mat-card>
+                                        </div>
+                                        <div class="col-lg-2 mb-5">
+                                          <mat-card>
+                                            <img
+                                              src="https://pinotmasters.sk/wp-content/uploads/2015/04/speaker-1-v2.jpg"
+                                              alt=""
+                                              width="100%"
+                                            />
+                                            <h3 class="name">Aicha</h3>
+                                          </mat-card>
+                                        </div>
+                                        <div class="col-lg-2 mb-5">
+                                          <mat-card>
+                                            <img
+                                              src="https://cardealer.potenzaglobalsolutions.com/wp-content/uploads/2017/01/01-5-430x450.jpg"
+                                              alt=""
+                                              width="100%"
+                                            />
+                                            <h3 class="name">Mariem</h3>
+                                          </mat-card>
+                                        </div>
+                                        <div class="col-lg-2 mb-5">
+                                          <mat-card>
+                                            <img
+                                              src="https://www.spacerocketadvertising.com/wp-content/uploads/2021/02/team-1.jpg"
+                                              alt=""
+                                              width="100%"
+                                            />
+                                            <h3 class="name">Ramzi</h3>
+                                          </mat-card>
+                                        </div>
+                                        <div class="col-lg-2 mb-5">
+                                          <mat-card>
+                                            <img
+                                              src="https://oodp.ca/media/tutor-8.jpg"
+                                              alt=""
+                                              width="100%"
+                                            />
+                                            <h3 class="name">Anis</h3>
+                                          </mat-card>
+                                        </div>
+                                        <div class="col-lg-2 mb-5">
+                                          <mat-card>
+                                            <img
+                                              src="http://learnyzen.com/wp-content/uploads/2017/08/test1-481x385.png"
+                                              alt=""
+                                              width="100%"
+                                            />
+                                            <h3 class="name">Tarek</h3>
+                                          </mat-card>
+                                        </div>
+                                      </div>
+                                      <mat-paginator
+                                        [pageSizeOptions]="[5, 10, 20]"
+                                        showFirstLastButtons
+                                      ></mat-paginator>
                                     </mat-card>
                                   </div>
                                 </div>
-                                <mat-paginator
-                                  [pageSizeOptions]="[5, 10, 20]"
-                                  showFirstLastButtons
-                                ></mat-paginator>
-                              </mat-card>
-                            </div>
-                          </div>
+                              </div>
+                            </mat-tab>
+                            <mat-tab label="Equipe"> Equipe </mat-tab>
+                          </mat-tab-group>
                         </div>
-                      </mat-tab>
-                      <mat-tab label="Equipe"> Equipe </mat-tab>
-                    </mat-tab-group>
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-          </mat-tab>
-          <mat-tab label="Cortex Coins"> Cortex Coins </mat-tab>
-          <mat-tab label="Challanges"> Challanges </mat-tab>
-          <mat-tab label="Annotation"> Annotation </mat-tab>
-          <mat-tab label="Stats"> Stats </mat-tab>
-          <mat-tab label="Réglages"> Réglages </mat-tab>
-        </mat-tab-group>
+                      </div>
+                    </div>
+                  </ng-template>
+                </mat-tab>
+                <mat-tab label="Cortex Coins"> Cortex Coins </mat-tab>
+                <mat-tab label="Challanges"> Challanges </mat-tab>
+                <mat-tab label="Annotation"> Annotation </mat-tab>
+                <mat-tab label="Stats"> Stats </mat-tab>
+                <mat-tab label="Réglages"> Réglages </mat-tab>
+              </mat-tab-group>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 </div>

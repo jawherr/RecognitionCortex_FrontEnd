@@ -4,7 +4,7 @@ import { TokenStorageService } from '../../services/token-storage.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-import { Commentaire } from '../../model/commentaire';
+import { Commentaire } from '../../models/commentaire';
 import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-commentaire',
@@ -20,7 +20,7 @@ export class CommentaireComponent implements OnInit {
     private token : TokenStorageService ) { }
 
   publications? : Commentaire[] ;
-  currentUser : any ;
+  currentUtilisateur : any ;
   userPermission : boolean = false ;
   dataSource!: MatTableDataSource<Commentaire>;
   displayedColumns: string[] = ['id', 'libelle', 'publication','update','delete'];
@@ -34,7 +34,7 @@ export class CommentaireComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCommentaires() ;
-    this.currentUser = this.token.getUtilisateur();
+    this.currentUtilisateur = this.token.getUtilisateur();
     this.userPermission = this.permissions();
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
@@ -67,7 +67,7 @@ export class CommentaireComponent implements OnInit {
 
   public permissions(): boolean
   {
-    return this.currentUser.roles.includes("ROLE_USER");
+    return this.currentUtilisateur.roles.includes("ROLE_USER");
   }
 
   logData(row: any) {

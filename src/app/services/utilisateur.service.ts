@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Utilisateur } from '../model/utilisateur';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { Utilisateur } from '../models/utilisateur';
 import { API_URL } from '../../environments/environment';
+import { JwtResponse } from '../response/JwtResponse';
+import { CookieService } from 'ngx-cookie-service';
 
 const httpOptions = { headers : new HttpHeaders({'Content-Type': 'application/json'})
 }; 
@@ -12,7 +14,21 @@ const httpOptions = { headers : new HttpHeaders({'Content-Type': 'application/js
 })
 export class UtilisateurService {
 
-  constructor(private http : HttpClient) { }
+  private currentUtilisateurSubject: BehaviorSubject<JwtResponse>;
+    public currentUtilisateur: Observable<JwtResponse>;
+    public nameTerms = new Subject<string>();
+    public name$ = this.nameTerms.asObservable();
+    constructor(private http: HttpClient,
+                private cookieService: CookieService) {
+        const memo = localStorage.getItem('currentUtilisateur');
+        this.currentUtilisateurSubject = new BehaviorSubject<JwtResponse>(JSON.parse(memo!));
+        this.currentUtilisateur = this.currentUtilisateurSubject.asObservable();
+        cookieService.set('currentUtilisateur', memo!);
+    }
+
+    get currentUtilisateurValue() {
+        return this.currentUtilisateurSubject.value;
+    }
 
   getPublicContent(): Observable<any> {
     return this.http.get(API_URL + 'all', { responseType: 'text' });

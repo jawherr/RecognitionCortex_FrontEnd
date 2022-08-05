@@ -16,12 +16,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AchatComponent } from './components/achat/achat.component';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule } from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {authInterceptorProviders } from './_helpers/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
@@ -40,6 +42,19 @@ import { CommentaireComponent } from './components/commentaire/commentaire.compo
 import { DossierComponent } from './components/dossier/dossier.component';
 import { TacheComponent } from './components/tache/tache.component';
 import { BadgeComponent } from './components/badge/badge.component';
+import { CardComponent } from './components/card/card.component';
+import { DetailComponent } from './components/product-detail/detail.component';
+import { PaginationComponent } from './components/parts/pagination/pagination.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { NavrhComponent } from './components/naverh/navrh.component';
+import { BodyComponent } from './components/body/body.component';
+import { DefaultComponent } from './admin/layouts/default/default.component';
+import { DefaultModule } from './admin/layouts/default/default.module';
+import {CookieService} from "ngx-cookie-service";
+import { JwtInterceptor } from './_interceptors/jwt-interceptor.service';
+import { ErrorInterceptor } from './_interceptors/error-interceptor.service';
+import { CartComponent } from './components/cart/cart.component';
+
 MatSelectModule
 @NgModule({
   declarations: [
@@ -50,7 +65,11 @@ MatSelectModule
     HeaderComponent,
     DashboardComponent,
     PublicationComponent,
+    SidenavComponent,
     ProfilComponent,
+    CardComponent,
+    DetailComponent,
+    PaginationComponent,
     ClassementComponent,
     RecompenseComponent,
     MessagerieComponent,
@@ -60,7 +79,10 @@ MatSelectModule
     CommentaireComponent,
     DossierComponent,
     TacheComponent,
-    BadgeComponent
+    BadgeComponent,
+    NavrhComponent,
+    BodyComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -84,9 +106,13 @@ MatSelectModule
     MatSidenavModule,
     MatButtonModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    DefaultModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [CookieService,
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

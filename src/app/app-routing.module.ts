@@ -14,15 +14,34 @@ import { PublicationComponent } from './components/publication/publication.compo
 import { RecompenseComponent } from './components/recompense/recompense.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
 import { CommentaireComponent } from './components/commentaire/commentaire.component';
+import { CardComponent } from './components/card/card.component';
+import { DetailComponent } from './components/product-detail/detail.component';
+import { DefaultComponent } from './admin/layouts/default/default.component';
+import { PostsComponent } from './admin/modules/posts/posts.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
+  {path: 'admin',
+  component: DefaultComponent,
+  children: [{
+    path: 'admin',
+    component: DashboardComponent
+  }, {
+    path: 'posts',
+    component: PostsComponent
+  }]},
   { path: 'login', component: LoginComponent },
+  { path: 'product/:id', component: DetailComponent },
+  { path: 'category/:id', component: CardComponent },
+  { path: 'product', component: CardComponent },
+  { path: 'category', component: CardComponent },
   { path: 'header', component: HeaderComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'publication', component: PublicationComponent },
   { path: 'profil', component: ProfilComponent },
+  { path: 'cart', component: CartComponent },
   { path: 'badge', component: BadgeComponent },
   { path: 'equipe', component: EquipeComponent },
   { path: 'classement', component: ClassementComponent },
@@ -34,7 +53,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  declarations: [],
+    imports: [
+        RouterModule.forRoot(routes)//{onSameUrlNavigation: 'reload'}
+    ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

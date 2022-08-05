@@ -1,9 +1,21 @@
-<div id="app" class="limiter">
-  <app-header></app-header>
-  <div class="container-login100" *ngIf="!isLoggedIn">
-        <router-outlet></router-outlet>
-  </div>
-  <div class="container" *ngIf="isLoggedIn">
-    <router-outlet></router-outlet>
-  </div>
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen" *ngIf="isLoggedIn">
+    <!-- <mat-drawer mode="side" opened="true"> -->
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header
+      (toggleSidebarForMe)="sideBarToggler()" *ngIf="isLoggedIn"></app-header>
+    <div class="container-login100" *ngIf="!isLoggedIn">
+      <app-login></app-login>
+    </div>
+      <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+<div *ngIf="rhPermission">
+  <app-navrh (onToggleSideNav)="onToggleSideNav($event)"></app-navrh>
+  <app-body
+      [collapsed]="isSideNavCollapsed"
+      [screenWidth]="screenWidth"
+  ></app-body>
 </div>

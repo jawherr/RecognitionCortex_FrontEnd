@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Recompense } from '../model/recompense';
+import { Recompense } from '../models/recompense';
 import { API_URL } from '../../environments/environment';
 
 const httpOptions = { headers : new HttpHeaders({'Content-Type': 'application/json'})
