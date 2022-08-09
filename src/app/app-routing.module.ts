@@ -23,6 +23,12 @@ import { AccountsComponent } from './components/accounts/accounts.component';
 import { UserAccountsComponent } from './components/user-accounts/user-accounts.component';
 import { UsersComponent } from './components/users/users.component';
 import { NewUserComponent } from './components/new-user/new-user.component';
+import { OrderComponent } from './components/order/order.component';
+import { AuthGuard } from './_guards/auth.guard';
+import { OrderDetailComponent } from './components/order-detail/order-detail.component';
+import { ProductListComponent } from './components/product-list/product.list.component';
+import { Role } from './enum/Role';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -58,6 +64,33 @@ const routes: Routes = [
   { path: 'todolist', component: TodolistComponent },
   { path: 'parametres', component: ParametresComponent },
   { path: 'commentaire', component: CommentaireComponent },
+  { path: 'order/:id', component: OrderDetailComponent, canActivate: [AuthGuard] },
+  { path: 'order', component: OrderComponent, canActivate: [AuthGuard] },
+  { path: 'seller', redirectTo: 'seller/product', pathMatch: 'full' },
+  {
+        path: 'seller/product',
+        component: ProductListComponent,
+        canActivate: [AuthGuard],
+        data: {roles: [Role.Fournisseur/*, Role.Employee*/]}
+    },
+    /*{
+        path: 'profile',
+        component: UtilisateurDetailComponent,
+        canActivate: [AuthGuard]
+    },*/
+    {
+        path: 'seller/product/:id/edit',
+        component: ProductEditComponent,
+        canActivate: [AuthGuard],
+        data: {roles: [Role.Fournisseur/*, Role.Employee*/]}
+    },
+    {
+        path: 'seller/product/:id/new',
+        component: ProductEditComponent,
+        canActivate: [AuthGuard],
+        data: {roles: [Role.Fournisseur]}
+    },
+
 ];
 
 @NgModule({

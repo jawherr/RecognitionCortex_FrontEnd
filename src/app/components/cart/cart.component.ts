@@ -16,14 +16,14 @@ import { ProductInOrder } from 'src/app/models/productInOrder';
 export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
 
     constructor(private cartService: CartService,
-                private userService: UtilisateurService,
+                private utilisateurService: UtilisateurService,
                 private router: Router) {
-        this.userSubscription = this.userService.currentUtilisateur.subscribe(user => this.currentUser = user);
+        this.userSubscription = this.utilisateurService.currentUtilisateur.subscribe(utilisateur => this.currentUtilisateur = utilisateur);
     }
 
     productInOrders = [];
     total = 0;
-    currentUser: JwtResponse;
+    currentUtilisateur: JwtResponse;
     userSubscription: Subscription;
 
     private updateTerms = new Subject<ProductInOrder>();
@@ -61,7 +61,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     }
 
     ngOnDestroy() {
-        if (!this.currentUser) {
+        if (!this.currentUtilisateur) {
             this.cartService.storeLocalCart();
         }
         this.userSubscription.unsubscribe();
@@ -75,18 +75,18 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     addOne(productInOrder) {
         productInOrder.count++;
         CartComponent.validateCount(productInOrder);
-        if (this.currentUser) { this.updateTerms.next(productInOrder); }
+        if (this.currentUtilisateur) { this.updateTerms.next(productInOrder); }
     }
 
     minusOne(productInOrder) {
         productInOrder.count--;
         CartComponent.validateCount(productInOrder);
-        if (this.currentUser) { this.updateTerms.next(productInOrder); }
+        if (this.currentUtilisateur) { this.updateTerms.next(productInOrder); }
     }
 
     onChange(productInOrder) {
         CartComponent.validateCount(productInOrder);
-        if (this.currentUser) { this.updateTerms.next(productInOrder); }
+        if (this.currentUtilisateur) { this.updateTerms.next(productInOrder); }
     }
 
 
@@ -100,11 +100,11 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     }
 
     checkout() {
-        if (!this.currentUser) {
+        if (!this.currentUtilisateur) {
             this.router.navigate(['/login'], {queryParams: {returnUrl: this.router.url}});
-        } /*else if (this.currentUser.role !== Role.Fournisseur) {
+        } else if (this.currentUtilisateur.role !== Role.User) {
             this.router.navigate(['/seller']);
-        }*/ else {
+        } else {
             this.cartService.checkout().subscribe(
                 _ => {
                     this.productInOrders = [];

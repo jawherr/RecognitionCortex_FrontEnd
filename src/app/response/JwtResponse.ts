@@ -2,7 +2,7 @@ export class JwtResponse {
     token!: string;
     type!: string;
     account!: string;
-    name!: string;
+    username!: string;
     role!: string;
 
 }

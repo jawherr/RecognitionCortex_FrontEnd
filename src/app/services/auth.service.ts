@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { BehaviorSubject, catchError, Observable, of, Subject, tap } from 'rxjs';
+import { API_URL } from 'src/environments/environment';
+import { Utilisateur } from '../models/utilisateur';
 import { JwtResponse } from '../response/JwtResponse';
 
 const AUTH_API = 'http://localhost:8090/auth/' ;
@@ -23,7 +25,11 @@ export class AuthService {
         this.currentUtilisateur = this.currentUtilisateurSubject.asObservable();
         cookieService.set('currentUtilisateur', memo);
     }
-  
+
+  get currentUtilisateurValue() {
+    return this.currentUtilisateurSubject.value;
+  }
+
   login (loginForm): Observable<any> {
     return this.http.post<JwtResponse>(AUTH_API+'signin',loginForm).pipe(
       tap(utilisateur => {
@@ -32,8 +38,8 @@ export class AuthService {
               if (loginForm.remembered) {
                   localStorage.setItem('currentUtilisateur', JSON.stringify(utilisateur));
               }
-              console.log((utilisateur.name));
-              this.nameTerms.next(utilisateur.name);
+              console.log((utilisateur.username));
+              this.nameTerms.next(utilisateur.username);
               this.currentUtilisateurSubject.next(utilisateur);
               return utilisateur;
           }
@@ -42,16 +48,15 @@ export class AuthService {
     );
   }
 
-  register (username : string, password : string) : Observable<any>
+  register (utilisateur: Utilisateur) : Observable<Utilisateur>
   {
-    return this.http.post(AUTH_API+'signup',{
-      username,password
-    },httpOptions)
+    const url = `${API_URL}/signup`;
+    return this.http.post<Utilisateur>(url, utilisateur);
   }
   logout() {
     this.currentUtilisateurSubject.next(null);
-    localStorage.removeItem('currentUser');
-    this.cookieService.delete('currentUser');
+    localStorage.removeItem('currentUtilisateur');
+    this.cookieService.delete('currentUtilisateur');
   }
   /**
      * Handle Http operation that failed.

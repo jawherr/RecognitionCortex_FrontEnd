@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../../services/product.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CartService} from '../../services/cart.service';
-import {ProductInOrder} from '../../models/productInOrder';
+import {CookieService} from 'ngx-cookie-service';
 import {ProductInfo} from '../../models/productInfo';
-import { CookieService } from 'ngx-cookie-service';
+import { ProductInOrder } from 'src/app/models/productInOrder';
 
 @Component({
   selector: 'app-detail',
@@ -12,9 +12,9 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  title!: string;
-  count!: number;
-  productInfo!: ProductInfo;
+  title: string;
+  count: number;
+  productInfo: ProductInfo;
 
   constructor(
       private productService: ProductService,
@@ -42,7 +42,7 @@ export class DetailComponent implements OnInit {
 
   getProduct(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.productService.getDetail(id!).subscribe(
+    this.productService.getDetail(id).subscribe(
         prod => {
           this.productInfo = prod;
         },

@@ -39,14 +39,25 @@ export class UtilisateurService {
     return this.http.get<Utilisateur[]>(API_URL +'/utilisateur',httpOptions);
   }
 
-  getUtilisateur(id : number) : Observable<Utilisateur> 
+  getUtilisateur(utilisateur : Utilisateur) : Observable<Utilisateur> 
   {
-    return this.http.get<Utilisateur>(API_URL+`/utilisateur/${id}`,httpOptions) ;
+    const url = `${API_URL}/utilisateur/profile`;
+    return this.http.put<Utilisateur>(url, utilisateur); 
   }
 
   public updateUtilisateur(utilisateur : Utilisateur) : Observable<Utilisateur> 
   {
     return this.http.put<Utilisateur>(API_URL+'/utilisateur',utilisateur); 
+  }
+
+  update(utilisateur: Utilisateur): Observable<Utilisateur> {
+    const url = `${API_URL}/profile`;
+    return this.http.put<Utilisateur>(url, utilisateur);
+  }
+  
+  get(username: string): Observable<Utilisateur> {
+    const url = `${API_URL}/utilisateur/profile/${username}`;
+    return this.http.get<Utilisateur>(url);
   }
 
   public deleteUtilisateur( id : number) : Observable<void> 

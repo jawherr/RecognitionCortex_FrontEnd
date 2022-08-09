@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import {API_URL} from '../../environments/environment';
 import {CookieService} from 'ngx-cookie-service';
@@ -10,7 +10,8 @@ import {Cart} from '../models/cart';
 import {Item} from '../models/item';
 import {JwtResponse} from '../response/JwtResponse';
 import {ProductInOrder} from '../models/productInOrder';
-
+const httpOptions = { headers : new HttpHeaders({'Content-Type': 'application/json'})
+}; 
 @Injectable({
   providedIn: 'root'
 })

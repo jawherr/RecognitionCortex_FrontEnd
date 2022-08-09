@@ -1,6 +1,6 @@
 import {ProductInfo} from "./productInfo";
 
 export class Item {
-    quantity!: number;
-    productInfo!: ProductInfo
+    quantity: number;
+    productInfo: ProductInfo;
 }

@@ -58,6 +58,10 @@ import { AccountsComponent } from './components/accounts/accounts.component';
 import { UserAccountsComponent } from './components/user-accounts/user-accounts.component';
 import { UsersComponent } from './components/users/users.component';
 import { NewUserComponent } from './components/new-user/new-user.component';
+import { OrderComponent } from './components/order/order.component';
+import { OrderDetailComponent } from './components/order-detail/order-detail.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { ProductListComponent } from './components/product-list/product.list.component';
 
 MatSelectModule
 @NgModule({
@@ -72,6 +76,7 @@ MatSelectModule
     SidenavComponent,
     ProfilComponent,
     CardComponent,
+    OrderComponent,
     DetailComponent,
     PaginationComponent,
     ClassementComponent,
@@ -91,6 +96,9 @@ MatSelectModule
     CartComponent,
     UsersComponent,
     NewUserComponent,
+    OrderDetailComponent,
+    ProductEditComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
