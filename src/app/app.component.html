@@ -9,7 +9,7 @@
     <div class="container-login100" *ngIf="!isLoggedIn">
       <app-login></app-login>
     </div>
-      <router-outlet></router-outlet>
+      <router-outlet *ngIf="isLoggedIn"></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
 <div *ngIf="rhPermission">

@@ -15,14 +15,14 @@ export const navbarData = [
         label: 'Profil'
     },
     {
-        routeLink: 'badge',
+        routeLink: 'badge-parametre',
         icon: 'fal fa-trophy',
         label: 'Badge'
     },
     {
-        routeLink: 'equipe',
+        routeLink: 'teams',
         icon: 'fal fa-users-crown',
-        label: 'Equipe'
+        label: 'Teams'
     },
     {
         routeLink: 'classement',

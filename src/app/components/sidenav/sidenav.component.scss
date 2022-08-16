@@ -8,7 +8,7 @@
     text-align: center;
     padding: 2.6rem 1rem;
     img {
-      width: 30%;
+      width: 50%;
       border-radius: 10px;
       margin-right: 10px;
     }
@@ -30,7 +30,7 @@
         border-radius: 5px;
         margin: 0 8px;
         &:hover {
-          background: #2c3344 !important;
+          background: #247aec !important;
         }
       }
     }
@@ -45,15 +45,15 @@
     color: #f2f5f7 !important;
     ::ng-deep {
       .mat-list-item-content {
-        background: #2c3344 !important;
+        background: #247aec !important;
         &:hover {
-          background: #2c3344 !important;
+          background: #247aec !important;
         }
       }
     }
   }
   .mat-subheader {
-    color: #818cf8;
+    color: #247aec;
     font-size: 0.6rem;
     font-weight: 100;
     letter-spacing: 1px;

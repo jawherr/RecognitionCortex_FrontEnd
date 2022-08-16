@@ -29,6 +29,8 @@ import { OrderDetailComponent } from './components/order-detail/order-detail.com
 import { ProductListComponent } from './components/product-list/product.list.component';
 import { Role } from './enum/Role';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { TeamsComponent } from './components/teams/teams.component';
+import { BadgeParametreComponent } from './components/badge-parametre/badge-parametre.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -54,6 +56,8 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'badge', component: BadgeComponent },
   { path :"users", component : UsersComponent},
+  { path :"teams", component : TeamsComponent},
+  { path :"badge-parametre", component : BadgeParametreComponent},
   { path :"accounts", component : AccountsComponent},
   { path :"new-user", component : NewUserComponent},
   { path :"user-accounts/:id", component : UserAccountsComponent},

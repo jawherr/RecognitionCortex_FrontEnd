@@ -62,6 +62,8 @@ import { OrderComponent } from './components/order/order.component';
 import { OrderDetailComponent } from './components/order-detail/order-detail.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { ProductListComponent } from './components/product-list/product.list.component';
+import { TeamsComponent } from './components/teams/teams.component';
+import { BadgeParametreComponent } from './components/badge-parametre/badge-parametre.component';
 
 MatSelectModule
 @NgModule({
@@ -99,6 +101,8 @@ MatSelectModule
     OrderDetailComponent,
     ProductEditComponent,
     ProductListComponent,
+    TeamsComponent,
+    BadgeParametreComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,49 @@
+<div class="mat-elevation-z8">
+  <h2>Tout les équipes</h2>
+  <h4><a routerLink="/equipe/detail" *ngIf="userPermission">Ajouter une equipe</a></h4>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+  </mat-form-field>
+  <mat-table [dataSource]="dataSource" matSort class="demo-table">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+      <mat-cell *matCellDef="let equipe of equipes"> {{equipe.id}} </mat-cell>
+    </ng-container>
+
+    <!-- Nom Column -->
+    <ng-container matColumnDef="nom">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nom </mat-header-cell>
+      <mat-cell *matCellDef="let equipe of equipes"> {{equipe.nom}} </mat-cell>
+    </ng-container>
+
+    <!-- Objectif Column -->
+    <ng-container matColumnDef="objectif">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Objectif </mat-header-cell>
+      <mat-cell *matCellDef="let equipe of equipes"> {{equipe.objectif}} </mat-cell>
+    </ng-container>
+
+    <!-- Update Column -->
+    <ng-container matColumnDef="update" *ngIf="userPermission">
+      <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+      <mat-cell *matCellDef="let equipe of equipes">
+        <a routerLink="/" class="btn btn-primary">update</a>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Delete Column -->
+    <ng-container matColumnDef="delete" *ngIf="userPermission">
+      <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+      <mat-cell *matCellDef="let equipe of equipes">
+        <button type="button" class="btn btn-danger" (click)="deleteEquipe(equipe.id!)">delete</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row (click)="logData(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+
+
