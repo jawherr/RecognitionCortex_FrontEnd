@@ -1,20 +1,42 @@
-.gradient-custom {
-    /* fallback for old browsers */
-    background: #f093fb;
+body{
+    background-image: url("https://st3.depositphotos.com/1103339/13209/v/1600/depositphotos_132095056-stock-illustration-abstract-seamless-pattern-in-postmodern.jpg");
+  }
+  div{
+    margin: 2em 5em 3em 5em;
+  
+    padding: 2em 6em 2em 6em;
+    background: rgb(2,0,36);
+    background: linear-gradient(117deg, rgba(40,121,242,255) 0%, rgba(87,232,248,255) 96%, rgba(36,109,219,7) 98%, rgba(36,109,219,7) 98%, rgba(26,86,239,255) 98%);
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 16px;
+    border-radius: 1.25rem;
+  }
+  #container_1{
+    text-align:center;
+  }
+  #container_2{
+   display: block;
+  
     
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
-    
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1))
-    }
-    
-    .card-registration .select-input.form-control[readonly]:not([disabled]) {
-    font-size: 1rem;
-    line-height: 2.15;
-    padding-left: .75em;
-    padding-right: .75em;
-    }
-    .card-registration .select-arrow {
-    top: 13px;
-    }
+  }
+  .form{
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  
+  #submit{
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: rgb(2,0,36);
+    color: inherit;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  textarea{
+    width: 100%;
+  }
+  
+  

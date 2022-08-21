@@ -48,7 +48,7 @@ export class CardComponent implements OnInit, OnDestroy {
       this.getProds();
     }
   }
-  getProds(page: number = 1, size: number = 3) {
+  getProds(page: number = 1, size: number = 4) {
     if (this.route.snapshot.url.length == 1) {
       this.productService.getAllInPage(+page, +size)
         .subscribe(page => {

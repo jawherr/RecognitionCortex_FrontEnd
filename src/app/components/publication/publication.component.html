@@ -1,14 +1,15 @@
 <div class="container-fluid page">
     <div class="d-flex page__box p-5 mt-2">Publication</div>
+    <!--<a href="/add-post" class="new-post">Add Post</a>-->
         <br>
-        <div class="container">
+        <div>
         <div class="profile-wrapper">
             <div class="profile-section-user">
-                <div class="profile-cover-img"><img src="https://bootdey.com/img/Content/flores-amarillas-wallpaper.jpeg" alt=""></div>
-                <div class="profile-info-brief p-3"><img class="img-fluid user-profile-avatar" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
+                <div class="profile-cover-img"><img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).webp" alt=""></div>
+                <div class="profile-info-brief p-3"><img class="img-fluid user-profile-avatar" src="./assets/images/pimage.png" alt="">
                     <div class="text-center">
-                        <h5 class="text-uppercase mb-4">John Doe</h5>
-                        <p class="text-muted fz-base">I'm John Doe a web developer and software engineer. I studied computer science and software engineering.</p>
+                        <h5 class="text-uppercase mb-4">{{ user.username }}</h5>
+                        <p class="text-muted fz-base">I'm {{ user.username }} a web developer and software engineer. I studied computer science and software engineering.</p>
                     </div>
                 </div>
                 <!-- /.profile-info-brief -->
@@ -95,70 +96,65 @@
                 <div class="tab-content profile-tabs-content">
                     <div class="tab-pane active" id="profile-overview" role="tabpanel">
                         <div class="post-editor">
-                            <textarea name="post-field" id="post-field" class="post-field" placeholder="Write Something Cool!"></textarea>
-                            <div class="d-flex">
-                                <button class="btn btn-success px-4 py-1">Post</button>
-                            </div>
+                            <app-add-post></app-add-post>
                         </div>
                         <!-- /.post-editor -->
                         <div class="stream-posts">
-                            <div class="stream-post">
+                            <div class="stream-post" *ngFor = "let post of posts | async">
                                 <div class="sp-author">
                                     <a href="#" class="sp-author-avatar"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt=""></a>
-                                    <h6 class="sp-author-name"><a href="#">John Doe</a></h6></div>
+                                    <h6 class="sp-author-name"><a href="#">
+                                        <i class="fas fa-user"></i> Author : <b>{{post.username}}</b>
+                                    </a></h6>
+                                </div>
                                 <div class="sp-content">
-                                    <div class="sp-info">posted 1h ago</div>
-                                    <p class="sp-paragraph mb-0">Auk Soldanella plainscraft acetonylidene wolfishness irrecognizant Candolleaceae provision Marsipobranchii arpen Paleoanthropus supersecular inidoneous autoplagiarism palmcrist occamy equestrianism periodontoclasia mucedin overchannel goelism decapsulation pourer zira</p>
+                                    <div class="sp-info row">
+                                        <div class="col-sm-6">
+                                            <h3>
+                                                <a href="/post/{{post.id}}" class="blog-title">{{post.title}}</a>
+                                            </h3>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p style="font-size: 16px; float: right;"><b>Date</b> : {{post.createdOn.substring(0,10)}}</p>
+                                        </div>
+                                    </div>
+                                    <p class="sp-paragraph mb-0" [innerHTML]="post.content"></p>
+                                    <div>
+                                        <a href="/post/{{post.id}}">Read More..</a>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <a
+                                            href="/"
+                                            target="_blank"
+                                            >
+                                                <i class="far fa-thumbs-up"></i> 12 J'aime
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a href="/" target="_blank">
+                                                <i class="far fa-comment-alt-lines"></i> 2 Commenter
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a href="/" target="_blank">
+                                                <i class="far fa-share-alt"></i> 3 Paratger
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="col-sm-12">
+                                        <div class="post-editor">
+                                            <textarea name="post-field" id="post-field" class="post-field" placeholder="Write Something Cool!"></textarea>
+                                            <div class="d-flex">
+                                                <button class="btn btn-success px-4 py-1">Publier</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- /.sp-content -->
                             </div>
-                            <!-- /.stream-post -->
-                            <div class="stream-post">
-                                <div class="sp-author">
-                                    <a href="#" class="sp-author-avatar"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt=""></a>
-                                    <h6 class="sp-author-name"><a href="#">Palmira Guthridge</a></h6></div>
-                                <div class="sp-content">
-                                    <div class="sp-info">posted 1h ago</div>
-                                    <p class="sp-paragraph mb-0">Auk Soldanella plainscraft acetonylidene wolfishness irrecognizant Candolleaceae provision Marsipobranchii arpen Paleoanthropus supersecular inidoneous autoplagiarism palmcrist occamy equestrianism periodontoclasia mucedin overchannel goelism decapsulation pourer zira</p>
-                                </div>
-                                <!-- /.sp-content -->
-                            </div>
-                            <!-- /.stream-post -->
-                            <div class="stream-post">
-                                <div class="sp-author">
-                                    <a href="#" class="sp-author-avatar"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt=""></a>
-                                    <h6 class="sp-author-name"><a href="#">Meghann Fraser</a></h6></div>
-                                <div class="sp-content">
-                                    <div class="sp-info">posted 2h ago</div>
-                                    <p class="sp-paragraph mb-0">Auk Soldanella plainscraft acetonylidene wolfishness irrecognizant Candolleaceae provision Marsipobranchii arpen Paleoanthropus supersecular inidoneous autoplagiarism palmcrist occamy equestrianism periodontoclasia mucedin overchannel goelism decapsulation pourer zira</p>
-                                </div>
-                                <!-- /.sp-content -->
-                            </div>
-                            <!-- /.stream-post -->
-                            <div class="stream-post">
-                                <div class="sp-author">
-                                    <a href="#" class="sp-author-avatar"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt=""></a>
-                                    <h6 class="sp-author-name"><a href="#">Kent Lemaitre</a></h6></div>
-                            <div class="sp-content">
-                                    <div class="sp-info">posted 1h ago</div>
-                                    <p class="sp-paragraph mb-0">Auk Soldanella plainscraft acetonylidene wolfishness irrecognizant Candolleaceae provision Marsipobranchii arpen Paleoanthropus supersecular inidoneous autoplagiarism palmcrist occamy equestrianism periodontoclasia mucedin overchannel goelism decapsulation pourer zira</p>
-                                </div>
-                                <!-- /.sp-content -->
-                            </div>
-                            <!-- /.stream-post -->
-                            <div class="stream-post mb-0">
-                                <div class="sp-author">
-                                    <a href="#" class="sp-author-avatar"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt=""></a>
-                                    <h6 class="sp-author-name"><a href="#">Loria Lambing</a></h6></div>
-                                <div class="sp-content">
-                                    <div class="sp-info">posted 2 days ago</div>
-                                    <p class="sp-paragraph">Auk Soldanella plainscraft acetonylidene wolfishness irrecognizant Candolleaceae provision Marsipobranchii arpen Paleoanthropus supersecular inidoneous</p>
-                                    <p class="sp-paragraph">autoplagiarism palmcrist occamy equestrianism periodontoclasia mucedin overchannel goelism decapsulation pourer zira</p>
-                                </div>
-                                <!-- /.sp-content -->
-                            </div>
-                            <!-- /.stream-post -->
-                        </div>
                         <!-- /.stream-posts -->
                     </div>
                 </div>

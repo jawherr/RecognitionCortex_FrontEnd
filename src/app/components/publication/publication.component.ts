@@ -6,6 +6,9 @@ import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { Publication } from '../../models/publication';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { PostPayload } from '../add-post/post-payload';
+import { AddPostService } from 'src/app/services/add-post.service';
 @Component({
   selector: 'app-publication',
   templateUrl: './publication.component.html',
@@ -15,67 +18,25 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 export class PublicationComponent implements OnInit {
 
-  constructor(
-    private publicationService : PublicationService,
-    private token : TokenStorageService ) { }
+  posts:Observable<Array<PostPayload>>;
 
-  publications? : Publication[] ;
-  currentUtilisateur : any ;
-  userPermission : boolean = false ;
-  dataSource!: MatTableDataSource<Publication>;
-  displayedColumns: string[] = ['id', 'description', 'nb_like', 'utilisateur','update','delete'];
-  displayedColumnsData: string[] = ['id', 'description', 'nb_like', 'utilisateur','update','delete'];
-  @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
+  user : any;
+  private roles: string[] = [];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  adminPermission : boolean = false ; 
+  
+  constructor(private postService:AddPostService,private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
-    this.getPublications() ;
-    this.currentUtilisateur = this.token.getUtilisateur();
-    this.userPermission = this.permissions();
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-  }
 
-  getPublications() : void
-  {
-    this.publicationService.getPublications().subscribe(
-      (response : Publication[]) => {
-        this.publications = response;
-        this.dataSource = new MatTableDataSource(this.publications);
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
+    this.posts = this.postService.getAllPosts();
 
-  public deletePublication(id : number): void{
-    this.publicationService.deletePublication(id).subscribe(
-      (response: void) => {
-        console.log(response);
-        this.getPublications();
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
-
-  public permissions(): boolean
-  {
-    return this.currentUtilisateur.roles.includes("ROLE_USER");
-  }
-
-  logData(row: any) {
-    console.log(row);
-  }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn) {
+      this.user = this.tokenStorageService.getUtilisateur();
+      this.roles = this.user.roles;
+    }
   }
 }

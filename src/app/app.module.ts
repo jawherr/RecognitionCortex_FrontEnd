@@ -64,6 +64,9 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
 import { ProductListComponent } from './components/product-list/product.list.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { BadgeParametreComponent } from './components/badge-parametre/badge-parametre.component';
+import { AddPostComponent } from './components/add-post/add-post.component';
+import { PostComponent } from './components/post/post.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 MatSelectModule
 @NgModule({
@@ -102,7 +105,9 @@ MatSelectModule
     ProductEditComponent,
     ProductListComponent,
     TeamsComponent,
-    BadgeParametreComponent
+    BadgeParametreComponent,
+    AddPostComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -129,7 +134,8 @@ MatSelectModule
     MatListModule,
     MatMenuModule,
     DefaultModule,
-    MatGridListModule
+    MatGridListModule,
+    EditorModule,
   ],
   providers: [CookieService,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},

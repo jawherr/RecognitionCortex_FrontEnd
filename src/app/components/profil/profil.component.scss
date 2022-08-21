@@ -1,6 +1,6 @@
 .page {
     padding: 0 1rem;
-    background: #f1f5f9;
+    background: #fff;
     &__box {
       min-height: 120px;
       background: #1e293b;
@@ -54,22 +54,17 @@ body {
 }
 
 div#main-card {
-  max-width: 350px;
+  max-width: 80%;
   box-shadow: -5px 2px 18px 4px #ccc;
-  margin: 10px;
+  margin: 15px;
   border-radius: 10px;
 }
 
 div#bio-card {
-max-width: 100%;
+max-width: 80%;
 box-shadow: -5px 2px 18px 4px #ccc;
-margin: 10px;
+margin: 15px;
 border-radius: 10px;
-}
-
-#card-stat{
-  width: 100%;
-  padding: 30px;
 }
 
 ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
@@ -78,13 +73,13 @@ border-radius: 10px;
 
 .cover-photo {
   background: #72607a;
-  width: 350px;
+  max-width: 100%;
   height: 65px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 .card-info{
-  width: 350px;
+  max-width: 100%;
   height: 90px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -103,7 +98,7 @@ border-radius: 10px;
 }
 .bio-info{
 width: 100%;
-height: 120px;
+height: 90px;
 border-top-left-radius: 10px;
 border-top-right-radius: 10px;
 display: -webkit-box;
@@ -120,8 +115,7 @@ padding: 10px;
 }
 
 .photo {
-  background: #fff;
-  width: 350px;
+  max-width: 100%;
   height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -144,15 +138,13 @@ img#badge-img {
   max-height: 100%;
 }
 .content {
-  background: #fff;
-  width: 350px;
+  max-width: 100%;
   height: 110px;
   position: relative;
   top: -45px;
   padding: 10px;
 }
 .bio-content{
-background: #fff;
 width: 100%;
 height: 100%;
 position: relative;
@@ -162,7 +154,7 @@ padding: 20px;
 
 .contact {
   background: #e4a54d;
-  width: 350px;
+  max-width: 100%;
   height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -508,14 +500,14 @@ h5{
 } 
 .stat{
 margin: auto;
-width: 100%;
+width: 90%;
 padding: 20px;
 }  
 #card-stat{
 max-width: 100%;
 box-shadow: -1px 0px 4px 4px #ccc;
 border-radius: 10px;
-margin-bottom: 2%;
+margin-bottom: 1%;
 }
 h4{
 text-align: center;

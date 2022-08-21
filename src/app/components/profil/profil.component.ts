@@ -16,7 +16,7 @@ export class ProfilComponent implements OnInit {
   adminPermission : boolean = false ; 
 
 
-  user : any ;
+  user : any;
   constructor(private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {

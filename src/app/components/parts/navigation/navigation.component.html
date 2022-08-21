@@ -11,10 +11,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
 
         <div class="navbar-nav" *ngIf="!currentUtilisateur || currentUtilisateur.role == Role.Customer">
-
+            <a class="nav-item nav-link "
+                routerLink="/product">
+                All
+            </a>
             <a class="nav-item nav-link "
                routerLink="/category/0">
-               Telepphonie
+               Telephonie
             </a>
             <a class="nav-item nav-link"
                routerLink="/category/1">

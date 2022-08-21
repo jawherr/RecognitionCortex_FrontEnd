@@ -4,8 +4,12 @@
       <h1 align="center" class="display-4 mb-5">{{title}}</h1>
       <div class="row container">
         <a class="nav-item nav-link "
+        routerLink="/product">
+        All
+        </a>
+        <a class="nav-item nav-link "
         routerLink="/category/0">
-        Telepphonie
+        Telephonie
         </a>
         <a class="nav-item nav-link"
           routerLink="/category/1">
@@ -22,13 +26,13 @@
       </div>
       <br>
       <div class="row card-deck text-center">
-        <div *ngFor="let productInfo of page?.content" class="col-lg-3 ">
+        <div *ngFor="let productInfo of page?.content" class="col-lg-3">
           <div class="card mb-4">
             <img height="50%" class="card-img-top" src="{{productInfo.productIcon}}" alt="{{productInfo.productName}}">
             <div class="card-body">
               <h4 class="card-title ">{{productInfo.productName}}</h4>
               <div class="text-left">
-                <p class="card-test"><strong>Description: </strong>{{productInfo.productDescription}}</p>
+                <!--<p class="card-test"><strong>Description: </strong>{{productInfo.productDescription}}</p>-->
                 <p class="card-text"><strong>Price: </strong>{{productInfo.productPrice | currency}}</p>
                 <p class="card-text"><strong>Stock: </strong>{{productInfo.productStock}}</p>
               </div>

@@ -31,6 +31,8 @@ import { Role } from './enum/Role';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { BadgeParametreComponent } from './components/badge-parametre/badge-parametre.component';
+import { AddPostComponent } from './components/add-post/add-post.component';
+import { PostComponent } from './components/post/post.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -62,6 +64,8 @@ const routes: Routes = [
   { path :"new-user", component : NewUserComponent},
   { path :"user-accounts/:id", component : UserAccountsComponent},
   { path: 'equipe', component: EquipeComponent },
+  { path: 'add-post' ,component:AddPostComponent },
+  { path : 'post/:id', component:PostComponent },
   { path: 'classement', component: ClassementComponent },
   { path: 'recompense', component: RecompenseComponent },
   { path: 'messagerie', component: MessagerieComponent },

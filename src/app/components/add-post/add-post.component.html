@@ -1,0 +1,18 @@
+<div class="add-post-content">
+    <div class="container">
+        <form [formGroup]="addPostForm" (ngSubmit)="addPost()">
+            <div class="form-group">
+                <label class="post-title">Post Title</label>
+                <input type="text" [formControlName]="'title'" class="form-control" placeholder="title">
+            </div>
+            <div class="form-group">
+                <label class="post-content">Body</label>
+                <editor [formControlName]="'body'"[init]="{plugins:'lists link image table code help wordcount'}"
+                apiKey="ykej3z6wgsox30lbriq7r8kmp4f65lblayq2rgeff0rwphvw"></editor>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-md btn-primary" type="submit">Post</button>
+            </div>
+        </form>
+    </div>
+</div>
