@@ -15,6 +15,14 @@
           routerLink="/category/1">
           Bureautique
         </a>
+        <a class="nav-item nav-link"
+           routerLink="/category/4">
+           Impression
+        </a>
+        <a class="nav-item nav-link"
+           routerLink="/category/5">
+           Electromenager
+        </a>
         <a class="nav-item nav-link "
           routerLink="/category/2">
           Informatique
@@ -33,7 +41,7 @@
               <h4 class="card-title ">{{productInfo.productName}}</h4>
               <div class="text-left">
                 <!--<p class="card-test"><strong>Description: </strong>{{productInfo.productDescription}}</p>-->
-                <p class="card-text"><strong>Price: </strong>{{productInfo.productPrice | currency}}</p>
+                <p class="card-text"><strong>Price: </strong>{{productInfo.productPrice}} <i class="fas fa-coins"></i></p>
                 <p class="card-text"><strong>Stock: </strong>{{productInfo.productStock}}</p>
               </div>
               <br>

@@ -1,3 +1,3 @@
 export enum CategoryType {
-    "All","Telephonie", "Bureautique", "Informatique", "TV | PHOTO & SON"
+    "All","Telephonie", "Bureautique", "Informatique", "TV | PHOTO & SON", "Impression", "Electroménager"
 }

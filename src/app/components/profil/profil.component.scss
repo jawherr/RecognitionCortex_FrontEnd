@@ -199,15 +199,24 @@ ul {
   padding: 0;
 }
 
-.fa {
+.fab {
   font-size: 22px;
   padding: 10px;
   text-decoration: none;
   color: #465765;
 }
 
-.fa:hover {
-  color: #4eb98d;
+.fab:hover {
+  color: #247aec;
+}
+.fa{
+  font-size: 22px;
+  padding: 10px;
+  text-decoration: none;
+  color: #465765;
+}
+.fa:hover{
+  color: #247aec;
 }
 
 a.certified {

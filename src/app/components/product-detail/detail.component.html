@@ -5,13 +5,14 @@
       <img height="60%" class="card-img-top" src="{{productInfo?.productIcon}}">
       <div class="card-body">
         <h4 class="card-title ">{{productInfo?.productName}}</h4>
-        <form name="form" #form='ngForm' (ngSubmit)="productInfo?.productStatus == 0 && addToCart()">
+        <form name="form" #form='ngForm' (ngSubmit)="productInfo?.productStatus == 0 && 
+                addToAchat(productInfo?.productName,count,count*productInfo?.productPrice)">
           <div class="text-left">
             <input hidden name="productId" [value]=productInfo?.productId>
             <p class="card-test"><strong>Description: </strong>{{productInfo?.productDescription}}</p>
             <p class="card-text">
               <strong>Price: </strong>
-              <label id="price">{{productInfo?.productPrice | currency}}</label>
+              <label #price id="price">{{productInfo?.productPrice}} <i class="fas fa-coins"></i></label>
             </p>
             <p class="card-text"><strong>Stock: </strong>{{productInfo?.productStock}}</p>
 
@@ -21,6 +22,7 @@
                      (change)="validateCount()"
                      type="number"
                      name="count"
+                     id="count"
                      required
                      min="1"
                      [max]=productInfo?.productStock
@@ -29,7 +31,7 @@
 
 
             <p class="card-text"><strong>Subtotal: </strong>
-              <label id="subtotal">{{count * productInfo?.productPrice | currency}}</label>
+              <label id="subtotal">{{count * productInfo?.productPrice}} <i class="fas fa-coins"></i></label>
             </p>
           </div>
           <button type="submit" [disabled]="!form.form.valid" *ngIf="productInfo?.productStatus == 0; else offBlock"

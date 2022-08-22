@@ -1,10 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ProductService} from '../../services/product.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CartService} from '../../services/cart.service';
 import {CookieService} from 'ngx-cookie-service';
 import {ProductInfo} from '../../models/productInfo';
 import { ProductInOrder } from 'src/app/models/productInOrder';
+import { Achat } from 'src/app/models/achat';
+import { AchatService } from 'src/app/services/achat.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-detail',
@@ -12,6 +15,7 @@ import { ProductInOrder } from 'src/app/models/productInOrder';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
+  @Input() achat? : Achat 
   title: string;
   count: number;
   productInfo: ProductInfo;
@@ -21,6 +25,8 @@ export class DetailComponent implements OnInit {
       private cartService: CartService,
       private cookieService: CookieService,
       private route: ActivatedRoute,
+      private location : Location,
+      private achatService: AchatService,
       private router: Router
   ) {
   }
@@ -63,6 +69,17 @@ export class DetailComponent implements OnInit {
             },
             _ => console.log('Add Cart Failed')
         );
+  }
+  addToAchat(nom,nombre,montant){
+    let nAchat: Achat = new Achat(nom,nombre,montant);
+
+    this.achatService.addAchat(nAchat)
+    .subscribe(() => this.goBack()) ; 
+  }
+
+  goBack() : void 
+  {
+    this.location.back() ; 
   }
 
   validateCount() {

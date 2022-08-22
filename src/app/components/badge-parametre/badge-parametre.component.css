@@ -17,8 +17,7 @@ body{
   }
   #container_2{
    display: block;
-  
-    
+   margin-bottom: 2%;
   }
   .form{
     width: 100%;
@@ -38,5 +37,3 @@ body{
   textarea{
     width: 100%;
   }
-  
-  
