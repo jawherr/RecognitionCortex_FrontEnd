@@ -1,6 +1,9 @@
+<div class="div-flex">
+  <button  type="button"   class="btn btn-success" (click)="goTo()"> Ajouter une équipe</button>
+</div>
 <div class="mat-elevation-z8">
   <h2>Tout les équipes</h2>
-  <h4><a routerLink="/equipe/detail" *ngIf="userPermission">Ajouter une equipe</a></h4>
+   <!--<h4><a routerLink="/equipe/detail" *ngIf="userPermission">Ajouter une equipe</a></h4>-->
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
   </mat-form-field>
@@ -27,7 +30,7 @@
     <ng-container matColumnDef="update" *ngIf="userPermission">
       <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
       <mat-cell *matCellDef="let equipe of equipes">
-        <a routerLink="/" class="btn btn-primary">update</a>
+        <button class='btn btn-warning' (click)='goEdit(equipe._id)'>update</button>
       </mat-cell>
     </ng-container>
 
@@ -43,7 +46,5 @@
     <mat-row (click)="logData(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  
 </div>
-
-
-

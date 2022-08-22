@@ -1,3 +1,16 @@
+<div class="div-flex">
+  <button  type="button"   class="btn btn-success" (click)="goTo1()"> Ajouter un utilisateur</button>
+  
+
+  
+  
+</div>
+
+
+
+
+<br>
+
 <div class="container mt-2">
     <ng-container *ngIf="users | async as listUsers; else failureOrLading">
       <div class="card">
@@ -25,6 +38,7 @@
               <td>{{user.id}}</td>
               <td>{{user.username}}</td>
               <td>{{user.email}}</td>
+             
               <td>
                 <button (click)="handleDeleteUser(user)" class="btn btn-danger">
                   <i class="fa fa-trash"></i>
@@ -52,4 +66,6 @@
       </ng-template>
     </ng-template>
   </div>
-  
+
+
+ 

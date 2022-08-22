@@ -23,6 +23,13 @@ export class UsersComponent implements OnInit {
     });
     this.handleSearchUsers();
   }
+  goTo1(){
+    this.router.navigate([
+      '/addusers'
+  
+    ])
+  
+  }
   handleSearchUsers() {
     let kw=this.searchFormGroup?.value.keyword;
     this.users=this.utilisateurService.searchUsers(kw).pipe(

@@ -35,7 +35,7 @@
             [matMenuTriggerFor]="menu"
             class="user mt-2 d-flex align-items-center"
           >
-            <img src="./assets/images/pimage.png" alt="" class="user-image mr-1 p-2" />
+            <img src="{{user.cover_image}}" alt="" class="user-image mr-1 p-2" />
 
             {{ utilisateur.username }}
             <mat-icon class="user-image-icon ml-1"
@@ -43,11 +43,11 @@
             >
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink="/profile">
+            <button mat-menu-item routerLink="/profil">
               <mat-icon>perm_identity</mat-icon>
               Profile
             </button>
-            <button mat-menu-item routerLink="/paramatere">
+            <button mat-menu-item routerLink="/parametres">
               <mat-icon>settings</mat-icon>
               Parametres
             </button>

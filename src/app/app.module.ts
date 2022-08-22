@@ -67,6 +67,7 @@ import { BadgeParametreComponent } from './components/badge-parametre/badge-para
 import { AddPostComponent } from './components/add-post/add-post.component';
 import { PostComponent } from './components/post/post.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { AddTeamComponent } from './components/add-team/add-team.component';
 
 MatSelectModule
 @NgModule({
@@ -107,7 +108,8 @@ MatSelectModule
     TeamsComponent,
     BadgeParametreComponent,
     AddPostComponent,
-    PostComponent
+    PostComponent,
+    AddTeamComponent
   ],
   imports: [
     BrowserModule,

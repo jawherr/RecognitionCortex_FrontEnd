@@ -33,6 +33,7 @@ import { TeamsComponent } from './components/teams/teams.component';
 import { BadgeParametreComponent } from './components/badge-parametre/badge-parametre.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
 import { PostComponent } from './components/post/post.component';
+import { AddTeamComponent } from './components/add-team/add-team.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -69,6 +70,7 @@ const routes: Routes = [
   { path: 'classement', component: ClassementComponent },
   { path: 'recompense', component: RecompenseComponent },
   { path: 'messagerie', component: MessagerieComponent },
+  { path: 'addteams', component:AddTeamComponent},
   { path: 'todolist', component: TodolistComponent },
   { path: 'parametres', component: ParametresComponent },
   { path: 'commentaire', component: CommentaireComponent },

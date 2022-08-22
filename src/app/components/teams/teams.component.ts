@@ -6,6 +6,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { EquipeService } from 'src/app/services/equipe.service';
 import { Equipe } from 'src/app/models/equipe';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,14 +18,15 @@ export class TeamsComponent implements OnInit {
 
   constructor(
     private equipeService : EquipeService,
-    private token : TokenStorageService ) { }
+    private token : TokenStorageService ,
+    private router:Router ) { }
 
   equipes? : Equipe[] ;
   currentUser : any ;
   userPermission : boolean = false ;
   dataSource!: MatTableDataSource<Equipe>;
-  displayedColumns: string[] = ['id', 'nom', 'objectif'];
-  displayedColumnsData: string[] = ['id', 'nom', 'objectif'];
+  displayedColumns: string[] = ['id', 'nom', 'objectif','delete','update'];
+  displayedColumnsData: string[] = ['id', 'nom', 'objectif','delete','update'];
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -41,6 +43,17 @@ export class TeamsComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
   }
 
+goTo(){
+  this.router.navigate([
+    '/addteams'
+
+  ])
+
+}
+goEdit(id: any) {
+  this.router.navigate([`'editTeam/${id}`]);
+
+}
   getEquipes() : void
   {
     this.equipeService.getEquipes().subscribe(

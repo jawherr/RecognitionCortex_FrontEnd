@@ -9,7 +9,7 @@
               <div class="photo">
                 <img
                   id="profil-image"
-                  src="./assets/images/pimage.png"
+                  src="{{user.cover_image}}"
                   alt=""
                 />
               </div>
@@ -69,16 +69,16 @@
               <div class="bio-content">
                 <h4>Bio Graph</h4>
                 <div class="bio-row">
-                  <p><span>First Name </span>: Camila</p>
+                  <p><span>First Name </span>: {{user.nom}}</p>
                 </div>
                 <div class="bio-row">
-                  <p><span>Last Name </span>: Smith</p>
+                  <p><span>User Name </span>: {{user.username}}</p>
                 </div>
                 <div class="bio-row">
-                  <p><span>Country </span>: Australia</p>
+                  <p><span>address </span>: {{user.address}}</p>
                 </div>
                 <div class="bio-row">
-                  <p><span>Birthday</span>: 13 July 1983</p>
+                  <p><span>Birthday</span>: {{user.date_naissance | date}}</p>
                 </div>
               </div>
             </div>
@@ -235,7 +235,7 @@
                 <div class="panel-body inf-content">
                   <div class="row">
                     <div class="col-md-8">
-                      <strong>Information</strong><br/>
+                      <strong>Information</strong><br />
                       <div class="table-responsive">
                         <table class="table table-user-information">
                           <tbody>
@@ -248,7 +248,7 @@
                                   Identificacion
                                 </strong>
                               </td>
-                              <td class="text-primary">123456789</td>
+                              <td class="text-primary">{{ user.id }}</td>
                             </tr>
                             <tr>
                               <td>
@@ -259,7 +259,7 @@
                                   Name
                                 </strong>
                               </td>
-                              <td class="text-primary">Bootdey</td>
+                              <td class="text-primary">{{ user.nom}}</td>
                             </tr>
                             <tr>
                               <td>
@@ -282,7 +282,7 @@
                                   Username
                                 </strong>
                               </td>
-                              <td class="text-primary">bootnipets</td>
+                              <td class="text-primary">{{user.username}}</td>
                             </tr>
 
                             <tr>
@@ -294,7 +294,7 @@
                                   Role
                                 </strong>
                               </td>
-                              <td class="text-primary">Admin</td>
+                              <td class="text-primary">{{roleName}}</td>
                             </tr>
                             <tr>
                               <td>
@@ -305,7 +305,7 @@
                                   Email
                                 </strong>
                               </td>
-                              <td class="text-primary">noreply@email.com</td>
+                              <td class="text-primary">{{user.email}}</td>
                             </tr>
                             <tr>
                               <td>
@@ -316,7 +316,7 @@
                                   created
                                 </strong>
                               </td>
-                              <td class="text-primary">20 jul 20014</td>
+                              <td class="text-primary">{{user.created_at | date}}</td>
                             </tr>
                             <tr>
                               <td>
@@ -327,7 +327,7 @@
                                   Modified
                                 </strong>
                               </td>
-                              <td class="text-primary">20 jul 20014 20:00:00</td>
+                              <td class="text-primary">{{user.updated_at | date}}</td>
                             </tr>
                           </tbody>
                         </table>
