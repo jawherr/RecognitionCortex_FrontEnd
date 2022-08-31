@@ -1,6 +1,21 @@
 <div class="div-flex">
   <button  type="button"   class="btn btn-success" (click)="goTo()"> Ajouter une équipe</button>
+  
+
+  
+  
 </div>
+
+
+
+
+
+
+
+ 
+
+
+
 <div class="mat-elevation-z8">
   <h2>Tout les équipes</h2>
    <!--<h4><a routerLink="/equipe/detail" *ngIf="userPermission">Ajouter une equipe</a></h4>-->
@@ -27,10 +42,10 @@
     </ng-container>
 
     <!-- Update Column -->
-    <ng-container matColumnDef="update" *ngIf="userPermission">
+    <ng-container matColumnDef="update">
       <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
       <mat-cell *matCellDef="let equipe of equipes">
-        <button class='btn btn-warning' (click)='goEdit(equipe._id)'>update</button>
+        <a routerLink="/editTeam/{{equipe.id}}"  *ngIf="userPermission" class="btn btn-primary" >update</a>
       </mat-cell>
     </ng-container>
 
@@ -48,3 +63,21 @@
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
   
 </div>
+<!-- Modal 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>-->

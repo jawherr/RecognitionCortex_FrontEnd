@@ -6,6 +6,7 @@ import { API_URL } from '../../environments/environment';
 import { JwtResponse } from '../response/JwtResponse';
 import { CookieService } from 'ngx-cookie-service';
 import {environment} from "../../environments/environment";
+import { User } from '../models/user';
 
 const httpOptions = { headers : new HttpHeaders({'Content-Type': 'application/json'})
 }; 
@@ -45,9 +46,14 @@ export class UtilisateurService {
     return this.http.put<Utilisateur>(url, utilisateur); 
   }
 
-  public updateUtilisateur(utilisateur : Utilisateur) : Observable<Utilisateur> 
+  getUser(id : number) : Observable<User> 
   {
-    return this.http.put<Utilisateur>(API_URL+'/utilisateur',utilisateur); 
+    return this.http.get<User>(API_URL+`/utilisateur/${id}`,httpOptions) ;
+  }
+
+  public updateUtilisateur(utilisateur : User) : Observable<User> 
+  {
+    return this.http.put<User>(API_URL+'/utilisateur',utilisateur); 
   }
 
   update(utilisateur: Utilisateur): Observable<Utilisateur> {
@@ -65,14 +71,19 @@ export class UtilisateurService {
     return this.http.delete<void>(API_URL+`/utilisateur/${id}`); 
   }
 
+  addUser(user : User) : Observable<User> 
+  {
+    return this.http.post<User>(API_URL+'/utilisateur',user); 
+  }
+
   public getUsers():Observable<Array<Utilisateur>>{
     return this.http.get<Array<Utilisateur>>(environment.backendHost+"/users")
   }
   public searchUsers(keyword : string):Observable<Array<Utilisateur>>{
     return this.http.get<Array<Utilisateur>>(environment.backendHost+"/users/search?keyword="+keyword)
   }
-  public saveUser(user: Utilisateur):Observable<Utilisateur>{
-    return this.http.post<Utilisateur>(environment.backendHost+"/users",user);
+  public saveUser(user: User):Observable<User>{
+    return this.http.post<User>(environment.backendHost+"/users",user);
   }
   public deleteUser(id: number){
     return this.http.delete(environment.backendHost+"/users/"+id);

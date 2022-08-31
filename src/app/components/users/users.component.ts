@@ -12,12 +12,19 @@ import { UtilisateurService } from 'src/app/services/utilisateur.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  formValue : FormGroup;
   users! : Observable<Array<Utilisateur>>;
   errorMessage!: string;
   searchFormGroup : FormGroup | undefined;
   constructor(private utilisateurService : UtilisateurService, private fb : FormBuilder, private router : Router) { }
+  user:any = {};
 
   ngOnInit(): void {
+    this.formValue = this.fb.group({
+   username : [''],
+   email :['']
+    })
+    
     this.searchFormGroup=this.fb.group({
       keyword : this.fb.control("")
     });
@@ -25,10 +32,23 @@ export class UsersComponent implements OnInit {
   }
   goTo1(){
     this.router.navigate([
-      '/addusers'
+      '/new-user'
   
     ])
   
+  }
+  goEdit(user: Utilisateur){
+    this.utilisateurService.update(this.user).subscribe(data=>{
+      console.log(data)
+      this.router.navigateByUrl('/editUsers/'+user.id,{state :user})
+     })
+     
+   
+     
+  }
+  onEdit(row : any){
+    this.formValue.controls['username'].setValue(row.username);
+    this.formValue.controls['email'].setValue(row.email);
   }
   handleSearchUsers() {
     let kw=this.searchFormGroup?.value.keyword;

@@ -47,6 +47,10 @@ const routes: Routes = [
     path: 'posts',
     component: PostsComponent
   }]},
+  {path: 'editUsers/:id',component:NewUserComponent},
+  {path:'editTeam/:id',component:AddTeamComponent},
+  
+  { path: 'addteams', component:AddTeamComponent},
   { path: 'login', component: LoginComponent },
   { path: 'product/:id', component: DetailComponent },
   { path: 'category/:id', component: CardComponent },

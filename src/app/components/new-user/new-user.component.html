@@ -36,52 +36,65 @@
       </div>
       <div class="row clearfix">
         <div class="">
-          <form>
+          <div *ngIf="user">
+          <form [formGroup]="newUserFormGroup" (ngSubmit)="saveUser1()">
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-              <input type="email" name="email" placeholder="Email" required />
+              <input type="email" id="email" [(ngModel)]='user.email' formControlName="email"  class="form-control"/>
             </div>
-            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-              <input type="password" name="password" placeholder="Password" required />
-            </div>
-            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-              <input type="password" name="password" placeholder="Re-type Password" required />
+            <div class="input_field"> <span><i aria-hidden="true" class="fa-light fa-house"></i></span>
+              <input type="text" id="address" [(ngModel)]='user.address' formControlName="address" class="form-control" />
             </div>
             <div class="row clearfix">
               <div class="col_half">
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                  <input type="text" name="name" placeholder="First Name" />
+                  <input type="text" id="nom" [(ngModel)]='user.nom' formControlName="nom"  class="form-control"/>
                 </div>
               </div>
               <div class="col_half">
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                  <input type="text" name="name" placeholder="Last Name" required />
+                  <input type="text" id="username"  [(ngModel)]='user.username' formControlName="username" class="form-control"/>
                 </div>
               </div>
             </div>
-                <div class="input_field radio_option">
-                <input type="radio" name="radiogroup1" id="rd1">
-                <label for="rd1">Male</label>
-                <input type="radio" name="radiogroup1" id="rd2">
-                <label for="rd2">Female</label>
-                </div>
-                <div class="input_field select_option">
-                  <select>
-                    <option>Select a country</option>
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                  </select>
-                  <div class="select_arrow"></div>
-                </div>
-              <div class="input_field checkbox_option">
-                <input type="checkbox" id="cb1">
-            <label for="cb1">I agree with terms and conditions</label>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Update</button>
               </div>
-              <div class="input_field checkbox_option">
-                <input type="checkbox" id="cb2">
-            <label for="cb2">I want to receive the newsletter</label>
-              </div>
-            <input class="button" type="submit" value="Register" />
           </form>
+        </div>
+        <div *ngIf="user==undefined">
+          <form [formGroup]="newUserFormGroup" (ngSubmit)="addUser(username.value,email.value,nom.value,address.value)">
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+              <input type="email" id="email" #email formControlName="email"  class="form-control"/>
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-house"></i></span>
+              <input type="text" id="address" #address formControlName="address" class="form-control"/>
+            </div>
+            <div class="row clearfix">
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                  <input type="text" id="nom" #nom formControlName="nom"  class="form-control"/>
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                  <input type="text" id="username" #username formControlName="username" class="form-control"/>
+                </div>
+              </div>
+            </div>
+            <select name ="equipe" >
+              <option  >Open this select menu</option>
+              <option [value]="eq.id" *ngFor="let eq of EquipeList "> {{eq.nom}}</option>
+             
+            </select>
+            <br>
+              
+
+            
+              <div class="div-float-right">
+                <button type="submit" class="btn btn-warning">Ajouter</button>
+              </div>
+          </form>
+        </div>
         </div>
       </div>
     </div>
