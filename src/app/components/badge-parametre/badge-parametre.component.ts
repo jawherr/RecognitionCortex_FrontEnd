@@ -1,21 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { Badge } from 'src/app/models/badge';
+import { BadgeService } from 'src/app/services/badge.service';
 
-interface Food {
-  value: string;
-  viewValue: string;
-}
-
-interface Car {
-  value: string;
-  viewValue: string;
-}
 @Component({
   selector: 'app-badge-parametre',
   templateUrl: './badge-parametre.component.html',
   styleUrls: ['./badge-parametre.component.css']
 })
 export class BadgeParametreComponent implements OnInit {
+  @Input() badge? : Badge;
     selectedFiles?: FileList;
     selectedFileNames: string[] = [];
   
@@ -24,21 +20,19 @@ export class BadgeParametreComponent implements OnInit {
   
     previews: string[] = [];
     imageInfos?: Observable<any>;
-  constructor() { }
+  constructor(private badgeService : BadgeService,private location:Location,
+    private formBuilder : FormBuilder) { }
   selectedValue: string;
   selectedCar: string;
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
-  ];
+  badgeForm = this.formBuilder.group(
+    {
+      nom : this.badge?.nom,
+      image : this.badge?.image, 
+      description : this.badge?.description
+    }
+  ) ;
 
-  cars: Car[] = [
-    {value: 'volvo', viewValue: 'Volvo'},
-    {value: 'saab', viewValue: 'Saab'},
-    {value: 'mercedes', viewValue: 'Mercedes'},
-  ];
   ngOnInit(): void {
   }
   selectFiles(event: any): void {
@@ -63,6 +57,18 @@ export class BadgeParametreComponent implements OnInit {
         this.selectedFileNames.push(this.selectedFiles[i].name);
       }
     }
+  }
+  addBadge(nom: string,description : string,
+    image : string) : void 
+  {
+    let nBadge: Badge = new Badge(nom,description,image);
+    this.badgeService.addBadge(nBadge)
+    .subscribe();
+  }
+
+  goBack() : void 
+  {
+    this.location.back() ; 
   }
 
 }

@@ -6,10 +6,10 @@
         <div class="profile-wrapper">
             <div class="profile-section-user">
                 <div class="profile-cover-img"><img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).webp" alt=""></div>
-                <div class="profile-info-brief p-3"><img class="img-fluid user-profile-avatar" src="./assets/images/pimage.png" alt="">
+                <div class="profile-info-brief p-3"><img class="img-fluid user-profile-avatar" src="{{user.cover_image}}" alt="">
                     <div class="text-center">
-                        <h5 class="text-uppercase mb-4">{{ user.username }}</h5>
-                        <p class="text-muted fz-base">I'm {{ user.username }} a web developer and software engineer. I studied computer science and software engineering.</p>
+                        <h4 class="text-uppercase mb-4">{{user.username}}</h4>
+                        <p class="text-muted fz-base">{{user.brief}}</p>
                     </div>
                 </div>
                 <!-- /.profile-info-brief -->
@@ -29,19 +29,19 @@
                                 <tr>
                                     <td><strong>EMAIL:</strong></td>
                                     <td>
-                                        <p class="text-muted mb-0">rathemes@gmail.com</p>
+                                        <p class="text-muted mb-0">{{user.email}}</p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><strong>PHONE:</strong></td>
                                     <td>
-                                        <p class="text-muted mb-0">01145525755</p>
+                                        <p class="text-muted mb-0">{{user.phone}}</p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><strong>SKYPE:</strong></td>
+                                    <td><strong>ADDRESS:</strong></td>
                                     <td>
-                                        <p class="text-muted mb-0">Rathemes</p>
+                                        <p class="text-muted mb-0">{{user.address}}</p>
                                     </td>
                                 </tr>
                             </tbody>
@@ -103,7 +103,7 @@
                             <div class="stream-post" *ngFor = "let post of posts | async">
                                 <div class="sp-author">
                                     <a href="#" class="sp-author-avatar">
-                                        <img src="./assets/images/pimage.png" alt=""></a>
+                                        <img src="{{user.cover_image}}" alt=""></a>
                                     <h6 class="sp-author-name"><a href="#">
                                         <i class="fas fa-user"></i> Author : <b>{{post.username}}</b>
                                     </a></h6>
@@ -120,9 +120,9 @@
                                         </div>
                                     </div>
                                     <p class="sp-paragraph mb-0" [innerHTML]="post.content"></p>
-                                    <div>
+                                    <!--<div>
                                         <a href="/post/{{post.id}}">Read More..</a>
-                                    </div>
+                                    </div>-->
                                     <br>
                                     <div class="row">
                                         <div class="col-sm-4">
@@ -130,17 +130,17 @@
                                             href="/"
                                             target="_blank"
                                             >
-                                                <i class="far fa-thumbs-up"></i> 12 J'aime
+                                                <i class="far fa-thumbs-up"></i> {{post.nb_like}} J'aime
                                             </a>
                                         </div>
                                         <div class="col-sm-4">
                                             <a href="/" target="_blank">
-                                                <i class="far fa-comment-alt-lines"></i> 2 Commenter
+                                                <i class="far fa-comment-alt-lines"></i> {{post.nb_commenter}} Commenter
                                             </a>
                                         </div>
                                         <div class="col-sm-4">
                                             <a href="/" target="_blank">
-                                                <i class="far fa-share-alt"></i> 3 Paratger
+                                                <i class="far fa-share-alt"></i> {{post.nb_partager}} Paratger
                                             </a>
                                         </div>
                                     </div>

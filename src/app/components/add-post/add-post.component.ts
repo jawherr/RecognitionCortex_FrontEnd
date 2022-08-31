@@ -34,7 +34,12 @@ export class AddPostComponent implements OnInit {
       content:'',
       title:'',
       username:'',
-      createdOn:''
+      createdOn:'',
+      updatedOn:'',
+      nb_like: 0,
+      nb_commenter: 0,
+      nb_partager: 0,
+      utilisateur_id: null
     }
    }
 
@@ -47,6 +52,8 @@ export class AddPostComponent implements OnInit {
     this.postPayload.title = this.addPostForm.get('title').value;
     this.postPayload.username = this.tokenStorageService.getUtilisateur().username;
     this.postPayload.createdOn = formatDate(this.currentDate, 'yyyy-MM-dd', 'en-US');
+    this.postPayload.updatedOn = formatDate(this.currentDate, 'yyyy-MM-dd', 'en-US');
+    this.postPayload.utilisateur_id = this.tokenStorageService.getUtilisateur().id;
     this.addPostService.addPost(this.postPayload).subscribe(data => {
       //this.router.navigateByUrl('/publication');
       this.reloadPage();

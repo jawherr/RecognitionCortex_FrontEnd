@@ -11,10 +11,14 @@
 </div><!---container_1--->
 <div id="container_2">
   
-  <form id="survey-form">
+  <form id="survey-form" [formGroup]="badgeForm" (ngSubmit)="
+  addBadge(nom.value,description.value,image.value)">
     <label id="name-label">Name</label>
-      <input type="text" id="name" name="name" class="form" required placeholder="Inserer le nom"><br><!--name--->
+      <input type="text" #nom id="nom" name="nom" class="form"
+       required placeholder="Inserer le nom" formControlName="nom">
+      <br><!--name--->
     <label id="carrer">Affecter le badge a la table</label>
+    
     <select id="dropdown" name="role" required>
       <option disabled selected value>
         Select your table
@@ -34,17 +38,23 @@
     </select><!--dropdown--->
     <br>
     <label id="number-label">Valeur Affecter</label>
-      <input type="number" id="number" name="number" class="form" placeholder="Valeur" min=18 max=60 required><br><!---number-->
+      <input type="number" id="number" name="number" class="form" 
+      placeholder="Valeur" min=18 max=60 required><br><!---number-->
     <label id="number-label">Image</label>
-      <input type="file"
+      <!--<input type="file"
       id="avatar" name="avatar"
-      accept="image/png, image/jpeg">
+      accept="image/png, image/jpeg">-->
+      <input type="text" #image id="image" name="image" class="form" 
+      required placeholder="Inserer le nom" formControlName="image"><br><!--name--->
+    
     <p>Description de badge inserer</p>
       <textarea
-        id="comments"
-        name="comment"
+        id="description"
+        name="description"
+        #description
         placeholder="Enterer la description de badge..."
+        formControlName="description"
       ></textarea><!---comment-->
-    <input type="submit" id="submit" name="submit" value="Submit">
+    <button class="button" type="submit">Submit</button>
   </form><!---survey-form--->
 </div><!--container_2--->
